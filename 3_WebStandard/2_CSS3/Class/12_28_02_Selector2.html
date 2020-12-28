@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<!--
+    의사 (pseudo) 클래스 선택자 :
+    해당요소에는 실제로 존재하지 않지만 클래스가 선언된 것처럼 간주해서 만든 선택자
+    선언방법은 '태그명:의사클래스명' 형태이고, 상태, 반응, 링크 선택자등에 지원됨
+    a 태그에 대한 의사클래스 선택자 => :link, :visited
+    반응 의사 클래스 선택자 => :hover, :active, :focus
+-->
+<head>
+    <style>
+        a:link { text-decoration: none; color:black; }
+        a:visited { color:black; }
+        a:active { color:green; }
+        a:hover { text-decoration: underline; color: red; }
+    </style>
+</head>
+
+<body>
+    <p>
+        <a href="#"> 네이버로 이동</a> <br>
+        <a href="#"> 다음으로 이동</a> <br>
+        <a href="#"> 구글로 이동</a>
+    </p>
+</body>
+<!--
+    구조 의사 클래스 선택자
+    HTML 요소의 계층구조를 기준으로 특정 위치에 있는 요소를
+    선택하고 싶을때 사용 선언방법은 '태그명:구조의사클래스명' 형태임
+-->
+<head>
+    <style>
+        div#food ul li:first-child { background: red; }
+        div#food ul li:nth-child(3) { background: blue; }
+        div#food ul li:last-child { background: green; }
+    </style>
+</head>
+<body>
+
+<div id="food">
+    <ul>
+        <li>떡볶이</li>
+        <li>튀김</li>
+        <li>곱창</li>
+        <li>고기</li>
+        <li>국밥</li>
+    </ul>
+</div>
+</body>
+
+
+</html>
