@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> Float </title>
+</head>
+
+
+
+<!--
+float 속성
+웹 페이지 레이아웃 구성시 블록요소를 좌우로 배치하고 싶을때 사용하는 속성
+물론, flexbox 레이아웃을 더 많이 사용하기도 하지만
+flexbox 모델을 지원하지 않는 브라우져를 위해 여전히 사용되기도 함
+단, 설정된 float 속성을 해제하려면 clear 속성을 지정해야 함
+
+left 를 하면 왼쪽에 배치, 두번째 left 는 그 다음 위치에 옴
+right 를 하면 오른쪽에 배치, 두번째 right 는 그 다음 위치에 옴
+
+상위 div 에 margin 0, auto 를 주면 중앙 배치하게됨
+
+
+-->
+<head>
+    <style>
+        #d11 { width:100px; height:100px;
+                padding : 45px; font-size: 1.5em; color:white;
+                background: red; float: left;}
+        #d12 { width:100px; height:100px;
+                padding : 45px; font-size: 1.5em; color:white;
+                background: orange; float: left; }
+        #d13 { width:100px; height:100px;
+                padding : 45px; font-size: 1.5em; color:white;
+                background: blue; float: right; }
+        #d14 { width:100px; height:100px;
+                padding : 45px; font-size: 1.5em; color:white;
+                background: black; float: right; }
+        #container { width:900px; border : 1px solid red;
+                    margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="d11">1</div>
+        <div id="d12">2</div>
+        <div id="d13">3</div>
+        <div id="d14">4</div>
+    </div>
+</body>
+<br style="clear: both">
+<hr>
+
+<!--
+clear 속성
+설정된 float 속성을 해제할 때 사용
+left, right, both 등의 값으로 설정할 수 있음
+
+both 는 둘다 해제
+left 는 왼쪽만 해제
+right 는 오른쪽만 해제
+
+container 가 잡고 있는 범위로 footer 를 밀기 때문에 float 이 잡고 있는 범위와 상관없이 겹치지 않는다.
+-->
+<head>
+    <style>
+        #header { width: 960px; height: 125px; background: gold; }
+        #container2 { width: 960px; height: 500px;
+                        overflow: hidden;}
+        #aside { width: 180px; height: 500px; background: beige;
+                    float: left; }
+        #main { width: 780px; height: 500px; background: skyblue;
+                    float: right; }
+        #footer { width: 960px; height: 100px; background: chartreuse; }
+    </style>
+</head>
+<body>
+    <div id="header">header</div>
+    <div id="container2">
+        <div id="aside">aside</div>
+        <div id="main">main</div>
+    </div>
+    <div id="footer">footer</div>
+</body>
+<hr>
+
+
+
+<!--
+
+-->
+<head>
+    <style>
+
+    </style>
+</head>
+<body>
+
+</body>
+<hr>
+
+
+
+
+
+</html>
