@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+
+
+
+<!--
+리스트 속성
+
+리스트 요소는 ul, ol, li 태그등을 이용해서
+데이터 목록 형태로 표현할 때 사용함
+특히, ul 요소를 이용해서 레이아웃의 gnb 요소를 나타내기도 함
+(gnb : global navigation bar)
+
+
+단축 표기식
+list-style : 기호모양 이미지 위치;
+-->
+
+<!--
+list-style-type
+circle, square, decimal, none
+upper-roman, low-roman, upper-roman, low-alpha
+목록 앞의 블릿기호나 숫자등 글머리 기호를 제어함
+-->
+<head>
+    <style>
+        #games1 { list-style-type: none }
+    </style>
+</head>
+<body>
+    <p>내가 좋아하는 게임 best 5</p>
+    <ul id="games1">
+        <li>월드오브워크래프트</li>
+        <li>스타크래프트</li>
+        <li>오버워치</li>
+        <li>히어로즈 오브 스톰</li>
+        <li>디아블로</li>
+    </ul>
+</body>
+<hr>
+
+
+
+<!--
+list-style-image
+url(../image/free ... )
+목록 앞의 블릿기호나 숫자등 글머리 기호를 이미지로 대체함
+만약 이미지가 없는 경우 기본 글머리 기호가 보여짐
+16px 정도가 적당한 크기 (글자 폰트 크기)
+-->
+<head>
+    <style>
+        #games2 { list-style-image: url(../image/free-icon-star.png) }
+    </style>
+</head>
+<body>
+    <p>내가 좋아하는 게임 best 5</p>
+    <ul id="games2">
+        <li>월드오브워크래프트</li>
+        <li>스타크래프트</li>
+        <li>오버워치</li>
+        <li>히어로즈 오브 스톰</li>
+        <li>디아블로</li>
+    </ul>
+</body>
+<hr>
+
+
+
+<!--
+list-style-position
+outside(기본값), inside
+글머리 기호나 숫자의 위치를 지정함
+-->
+<head>
+    <style>
+        #games3 { list-style-position: outside }
+        #games4 { list-style-position: inside }
+    </style>
+</head>
+<body>
+    <p>내가 좋아하는 게임 best 5</p>
+    <ul id="games3">
+        <li>월드오브워크래프트</li>
+        <li>스타크래프트</li>
+        <li>오버워치</li>
+        <li>히어로즈 오브 스톰</li>
+        <li>디아블로</li>
+    </ul>
+    <p>내가 좋아하는 게임 best 5</p>
+    <ul id="games4">
+        <li>월드오브워크래프트</li>
+        <li>스타크래프트</li>
+        <li>오버워치</li>
+        <li>히어로즈 오브 스톰</li>
+        <li>디아블로</li>
+    </ul>
+</body>
+<hr><hr>
+
+
+
+<!--
+gnb : global navigation bar
+어느 페이지에 있든지 간에 언제나 보여지는 메뉴바를 의미
+보통 최상단 좌측에 위치하고 있음
+
+lnb : local navigation bar
+gnb 를 클릭했을때 나타나는 하위메뉴 또는 특정 페이지 에서만 볼 수 있는 부분메뉴를 의미
+
+snb : sidebar navigation bar
+주로 화면 좌측에 놓이는 서브메뉴를 의미
+
+fnb : footer navigation bar
+footer 에 놓이는 하위 메뉴를 의미
+-->
+<head>
+    <style>
+        #games5 {padding: 0; list-style: none;
+                position: absolute; top:30px; right:30px;}
+        #games5 li { float: left; padding: 0px 25px}
+    </style>
+</head>
+<body>
+    <p>다음</p>
+    <ul id="games5">
+        <li>다음메일 앱</li>
+        <li>공식 블로그</li>
+        <li>회원가입</li>
+        <li>로그인</li>
+    </ul>
+</body>
+<hr>
+
+
+
+</html>

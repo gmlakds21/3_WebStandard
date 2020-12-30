@@ -3,46 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>index</title>
+    <link rel="stylesheet" href="/2_CSS3/normalize.css">
+    <style>
+        body { margin: 0; padding: 0; }
+        #main { width: 1150px;  }
+
+        nav { margin: 30px auto; height:10px;}
+        nav ul { list-style:none; padding-left:0; padding-bottom: 15px;}
+        nav ul li { float: left; padding: 0px 25px;}
+        nav hr { clear:both; border: 1px solid black}
+
+        nav a { font-weight:bold; }
+        nav a:link { color: black; text-decoration: none;}
+        nav a:hover { color:red; text-decoration: underline;}
+        nav a:active { color: black; text-decoration: none; }
+
+        #container { height: 500px; }
+
+        footer { bottom: 20px; margin: 0 auto; }
+        footer p { text-align : center}
+        footer hr { border: 1px solid black }
+    </style>
 </head>
+
 <body>
+    <div id="main">
+
+        <header>
+            <h2>JSP 프로젝트 v1</h2>
+        </header>
+
+        <nav>
+            <div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="join.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="board/list.html">게시판</a></li>
+                    <li><a href="myinfo.html">회원정보</a></li>
+                </ul>
+            </div>
+            <hr>
+        </nav>
+
+        <div id ="container">
+            <section> </section>
+        </div>
 
 
-<header>
-    <h2>JSP 프로젝트 v1</h2>
-</header>
+        <footer>
+            <hr>
+            <p> copyright &copy; 2021. Seunghee. All Rights Reserved. </p>
+        </footer>
 
-<nav>
-    <ul>
-        <li>Home</li>
-        <li>회원가입</li>
-        <li>로그인</li>
-        <li>게시판</li>
-        <li>회원정보</li>
-    </ul>
-    <hr>
-</nav>
-
-<div id ="container">
-    <section> </section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-</div>
-
-
-<footer>
-    <hr>
-    <p style = "text-align : center"> copyright &copy; 2021. Seunghee. All Rights Reserved. </p>
-</footer>
-
-
-
-
+    </div>
 </body>
 </html>

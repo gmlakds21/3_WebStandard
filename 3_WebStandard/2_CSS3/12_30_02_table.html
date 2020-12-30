@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+
+
+
+<!--
+테이블
+데이터를 2차원 표형태로 나타내는데 사용하는 요소
+
+border-collapse
+테이블의 테두리를 어떻게 표현할 것인지 정의
+    separate : 셀 간의 공백 유지 (기본 값)
+    collapse : 셀 간의 공백 제거
+
+border-spacing
+    border-collapse : separate 일때
+    셀 간 공백의 크기를 정의
+-->
+<head>
+    <style>
+        #t11 { border : 1px solid black;
+            border-collapse : separate; }
+        #t11 td { border : 1px solid black; padding: 10px }
+    </style>
+</head>
+<body>
+    <table id="t11">
+        <tr> <th>이름</th> <th>국어</th> <th>영어</th> <th>수학</th> </tr>
+        <tr> <td>홍길동</td> <td>95</td> <td>90</td> <td>95</td> </tr>
+        <tr> <td>송혜교</td> <td>95</td> <td>90</td> <td>95</td> </tr>
+        <tr> <td>전지현</td> <td>95</td> <td>90</td> <td>95</td> </tr>
+    </table>
+</body>
+<hr>
+
+
+
+<!--
+table-layout
+    테이블의 내용에 따라 테이블의 크기를 어떻게 표현할 것인지 정의
+    auto : 내용에 따라 테이블이 자동으로 늘어남 (기본 값)
+    fixed : 내용에 따라 테이블이 자동으로 늘어나는 것을 방지
+-->
+<head>
+    <style>
+        #t21 { width:100px; table-layout: auto; }
+        #t21 th, #t21 td { border : 1px solid black; }
+        #t22 { width:100px; table-layout: fixed; }
+        #t22 th, #t22 td { border : 1px solid black; }
+    </style>
+</head>
+<body>
+    <table id="t21">
+        <tr> <th>내용</th> <td>123456789123456789123456789123456789</td> </tr>
+    </table>
+    <table id="t22">
+        <tr> <th>내용</th> <td>123456789123456789123456789123456789</td> </tr>
+    </table>
+</body>
+<hr>
+
+
+
+<!--
+vertical-align
+테이블의 내용을 위, 아래, 가운대로 정렬하고 싶을 때 사용
+정렬 방식은 top, middle, bottom 으로 지정
+-->
+<head>
+    <style>
+        #t31 td { border: 1px solid black; width: 100px; height: 100px; }
+        #t31 tr:nth-child(2) td:nth-child(1) { vertical-align: top; }
+        #t31 tr:nth-child(2) td:nth-child(2) { vertical-align: bottom; }
+        #t31 tr:nth-child(2) td:nth-child(3) { vertical-align: middle; }
+        #t31 tr:nth-child(3) td:nth-child(1) { vertical-align: top; text-align: center;}
+        #t31 tr:nth-child(3) td:nth-child(2) { vertical-align: bottom; text-align: center;}
+        #t31 tr:nth-child(3) td:nth-child(3) { vertical-align: middle; text-align: center;}
+        #t31 tr:nth-child(4) td:nth-child(1) { vertical-align: top; text-align: right;}
+        #t31 tr:nth-child(4) td:nth-child(2) { vertical-align: bottom; text-align: right;}
+        #t31 tr:nth-child(4) td:nth-child(3) { vertical-align: middle; text-align: right;}
+    </style>
+</head>
+<body>
+    <table id="t31">
+        <tr> <td>내용</td> <td>내용</td> <td>내용</td> </tr>
+        <tr> <td>내용</td> <td>내용</td> <td>내용</td> </tr>
+        <tr> <td>내용</td> <td>내용</td> <td>내용</td> </tr>
+        <tr> <td>내용</td> <td>내용</td> <td>내용</td> </tr>
+    </table>
+</body>
+<hr>
+
+
+
+<!--
+display:table
+    일반적으로 display 속성은 인라인 요소나 블록요소로 변환해서 출력하는데 사용
+    하지만, display 속성에 table 을 지정하면 블록요소가 테이블의 성질을 가지게 할 수 있음
+
+    table : 요소를 테이블 요소처럼 보여줌
+    table-row : 요소를 테이블의 tr 요소처럼 보여줌
+    table-cell : 요소를 테이블의 td 요소처럼 보여줌
+-->
+<head>
+    <style>
+        #t41 { display: table; }
+        .tr { display: table-row;}
+        .td { display: table-cell;
+                width:100px; height:100px; border: 1px solid black;
+                text-align: center; vertical-align: middle;}
+    </style>
+</head>
+<body>
+    <div id="t41">
+        <div class="tr">
+            <div class="td">이름</div>
+            <div class="td">국어</div>
+            <div class="td">영어</div>
+        </div>
+        <div class="tr">
+            <div class="td">수지</div>
+            <div class="td">98</div>
+            <div class="td">56</div>
+        </div>
+    </div>
+</body>
+<hr>
+
+
+
+
+
+
+
+
+</html>

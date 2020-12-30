@@ -3,51 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body { margin: 0; padding: 0; }
+        #main { width: 1150px;  }
+
+        nav { margin: 30px auto; height:10px;}
+        nav ul { list-style:none; padding-left:0; padding-bottom: 15px;}
+        nav ul li { float: left; padding: 0px 25px;}
+        nav hr { clear:both; border: 1px solid black}
+
+        nav a { font-weight:bold; }
+        nav a:link { color: black; text-decoration: none;}
+        nav a:hover { color:red; text-decoration: underline;}
+        nav a:active { color: black; text-decoration: none; }
+
+        #container { min-height: 500px; }
+
+        footer { bottom: 20px; margin: 0 auto; }
+        footer p { text-align : center}
+        footer hr { border: 1px solid black }
+    </style>
+    <style>
+        #container table { width: 75%; margin: 0 auto; border-collapse: collapse; table-layout: fixed;}
+        th, td { border: 1px solid black; text-align: center; padding: 5px;}
+        #container td:nth-child(2) { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+        .newbt { text-align: right; border:none; }
+        #bdgnb { border:none; }
+        #cpage { font-weight:bold; font-size:20px; }
+
+    </style>
 </head>
-<body>
 
 
-<header>
-    <h2>JSP 프로젝트 v1</h2>
-</header>
+<div id="main">
+    <header>
+        <h2>JSP 프로젝트 v1</h2>
+    </header>
 
-<nav>
-    <ul>
-        <li>Home</li>
-        <li>회원가입</li>
-        <li>로그인</li>
-        <li>게시판</li>
-        <li>회원정보</li>
-    </ul>
-    <hr>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../join.html">회원가입</a></li>
+            <li><a href="../login.html">로그인</a></li>
+            <li><a href="list.html">게시판</a></li>
+            <li><a href="../myinfo.html">회원정보</a></li>
+        </ul>
+        <hr>
+    </nav>
 
-<div id ="container">
-    <h2>게시판</h2>
-    <table border = "1" width = "700" cellspacing="0" cellpadding="3" style="text-align: center">
-        <thead>
-            <tr> <th>번호</th> <th>제목</th> <th>작성자</th> <th>작성일</th> <th>조회</th> </tr>
-        </thead>
-        <tbody>
-            <tr> <td>1</td> <td>시간은 금이라구, 친구! 진짜라구, 친구 정말...</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
-            <tr> <td>2</td> <td>시간은 금이라구, 친구! 진짜라구, 친구 정말...</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
-            <tr> <td>3</td> <td>시간은 금이라구, 친구! 진짜라구, 친구 정말...</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
-            <tr> <td>4</td> <td>시간은 금이라구, 친구! 진짜라구, 친구 정말...</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
-            <tr> <td>5</td> <td>시간은 금이라구, 친구! 진짜라구, 친구 정말...</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
-            <tr> <td>6</td> <td>시간은 금이라구, 친구! 진짜라구, 친구 정말...</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
-            <tr> <td>7</td> <td>시간은 금이라구, 친구! 진짜라구, 친구 정말...</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
-            <tr> <td>8</td> <td>시간은 금이라구, 친구! 진짜라구, 친구 정말...</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
-            <tr> <td>9</td> <td>시간은 금이라구, 친구! 진짜라구, 친구 정말...</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
-            <tr> <td>10</td> <td>시간은 금이라구, 친구! 진짜라구, 친구 정말...</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
-            <tr> <td>11</td> <td>시간은 금이라구, 친구! 진짜라구, 친구 정말...</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
-        </tbody>
-    </table>
+    <div id ="container">
+        <h2>게시판</h2>
+        <table>
+            <colgroup>  <!-- 컬럼 너비 정의 -->
+                <col  style="width:10%">
+                <col>
+                <col  style="width:15%">
+                <col  style="width:15%">
+                <col  style="width:10%">
+            </colgroup>
+            <thead>
+                <tr> <td colspan="5" class="newbt"><button type="button">글쓰기</button></td> </tr>
+                <tr> <th>번호</th> <th>제목</th> <th>작성자</th> <th>작성일</th> <th>조회</th> </tr>
+            </thead>
+            <tbody>
+                <tr> <td>1</td> <td class="td">시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구! 시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
+                <tr> <td>2</td> <td class="td">시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구! 시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
+                <tr> <td>3</td> <td class="td">시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구! 시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
+                <tr> <td>4</td> <td class="td">시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구! 시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
+                <tr> <td>5</td> <td class="td">시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구! 시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
+                <tr> <td>6</td> <td class="td">시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구! 시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
+                <tr> <td>7</td> <td class="td">시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구! 시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
+                <tr> <td>8</td> <td class="td">시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구! 시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
+                <tr> <td>9</td> <td class="td">시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구! 시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
+                <tr> <td>10</td> <td class="td">시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구! 시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
+                <tr> <td>11</td> <td class="td">시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구! 시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!</td> <td>seunghee</td> <td>2020-12-23</td> <td>777</td> </tr>
+                <tr> <td colspan="5" id="bdgnb"><span>◀◀ ◁ <span id="cpage">1</span> 2 3 4 5 6 7 8 9 10 ▷ ▶▶</span></td> </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <hr>
+        <p> copyright &copy; 2021. Seunghee. All Rights Reserved. </p>
+    </footer>
 </div>
-
-<!--<footer>-->
-<!--    <hr>-->
-<!--    <p style = "text-align : center"> copyright &copy; 2021. Seunghee. All Rights Reserved. </p>-->
-<!--</footer>-->
-
 </body>
 </html>

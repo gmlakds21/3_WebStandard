@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #nav { margin: 30px auto; height:10px;}
+        #navul { padding:0; list-style:none; }
+        #navul li { float: left; padding: 0px 25px;  }
+
+        .hr { border:1px solid black }
+    </style>
 </head>
 <body>
 
 <header>
     <h2>JSP 프로젝트 v1</h2>
 </header>
-
-<nav>
-    <ul>
+<nav id="nav">
+    <ul id="navul">
         <li>Home</li>
         <li>회원가입</li>
         <li>로그인</li>
         <li>게시판</li>
         <li>회원정보</li>
     </ul>
-    <hr>
+    <hr class="hr">
 </nav>
 
 <div id ="container">
