@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/2_CSS3/normalize.css">
+    <link rel="stylesheet" href="../base.css">
+    <!--
+    <style>
+        body { margin: 0; padding: 0; }
+        #main { width: 1150px;  }
+
+        nav { margin: 30px auto; height:10px;}
+        nav ul { list-style:none; padding-left:0; padding-bottom: 15px;}
+        nav ul li { float: left; padding: 0px 25px;}
+        nav hr { clear:both; border: 1px solid black}
+
+        nav a { font-weight:bold; }
+        nav a:link, nav a:active, nav a:visited { color: black; text-decoration: none;}
+        nav a:hover { color:red; text-decoration: underline;}
+
+        #container { height: 500px; }
+
+        footer { bottom: 20px; margin: 0 auto; }
+        footer p { text-align : center}
+        footer hr { border: 1px solid black }
+    </style>
+    -->
+    <style>
+        #write { width: 750px; margin: 150px auto; }
+        #write div { margin-bottom: 10px; }
+        #write label { display: inline-block; width: 120px; font-weight: bold;
+            text-align: right; margin-right: 10px; vertical-align: top;}
+        #write input { width: 150px; padding:5px; border: 1px solid black;}
+        #write textarea { width: 350px; height:100px; padding:5px; border: 1px solid black; }
+        #write button[type="button"] { margin-left: 135px; }
+        #write button { padding: 5px; background: white; color: black;}
+        input:hover, input:focus { background: lightgray; }
+    </style>
+</head>
+<body>
+<div id="main">
+
+    <header>
+        <h2>JSP 프로젝트 v1</h2>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../join.html">회원가입</a></li>
+            <li><a href="../login.html">로그인</a></li>
+            <li><a href="list.html">게시판</a></li>
+            <li><a href="../myinfo.html">회원정보</a></li>
+        </ul>
+        <hr>
+    </nav>
+
+    <div id ="container">
+        <section>
+            <h3>게시판-글쓰기</h3>
+            <form name="write" id="write" method="post">
+                <div> <label for="title">제목</label>
+                    <input type="text" name="title" id="title"> </div>
+                <div> <label for="userid">작성자</label>
+                    <input type="text" name="userid" id="userid"> </div>
+                <div> <label for="contents">본문</label>
+                    <textarea name="contents" id="contents"> </textarea></div>
+                <div>
+                    <button type="button">입력완료</button>
+                    <button type="reset">다시입력</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <hr>
+        <p> copyright &copy; 2021. Seunghee. All Rights Reserved. </p>
+    </footer>
+
+</div>
+</body>
+</html>

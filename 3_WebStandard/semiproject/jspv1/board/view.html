@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/2_CSS3/normalize.css">
+    <link rel="stylesheet" href="../base.css">
+    <!--
+    <style>
+        body { margin: 0; padding: 0; }
+        #main { width: 1150px;  }
+
+        nav { margin: 30px auto; height:10px;}
+        nav ul { list-style:none; padding-left:0; padding-bottom: 15px;}
+        nav ul li { float: left; padding: 0px 25px;}
+        nav hr { clear:both; border: 1px solid black}
+
+        nav a { font-weight:bold; }
+        nav a:link, nav a:active, nav a:visited { color: black; text-decoration: none;}
+        nav a:hover { color:red; text-decoration: underline;}
+
+        #container { height: 500px; }
+
+        footer { bottom: 20px; margin: 0 auto; }
+        footer p { text-align : center}
+        footer hr { border: 1px solid black }
+    </style>
+    -->
+    <style>
+        #view { width: 750px; margin: 150px auto; table-layout: fixed; }
+        #view div { margin-bottom: 10px; }
+        #view label { display: inline-block; width: 100px; font-weight: bold;
+            text-align: right; margin-right: 10px; vertical-align: top;}
+
+        #title { display: inline-block; width: 350px; white-space : nowrap; overflow : hidden; text-overflow: ellipsis; }
+        #contents { display: inline-block; width: 350px; height:150px; padding:5px; border: 1px solid black;
+                    overflow : auto;}
+    </style>
+</head>
+<body>
+<div id="main">
+
+    <header>
+        <h2>JSP 프로젝트 v1</h2>
+    </header>
+
+    <nav id="nav">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../join.html">회원가입</a></li>
+            <li><a href="../login.html">로그인</a></li>
+            <li><a href="list.html">게시판</a></li>
+            <li><a href="../myinfo.html">회원정보</a></li>
+        </ul>
+        <hr>
+    </nav>
+
+    <div id ="container">
+        <section>
+            <h3>게시판-글쓰기</h3>
+            <div name="view" id="view" method="post">
+                <div> <label for="title">제목</label>
+                    <span id="title">시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!</span></div>
+                <div> <label for="userid">작성자</label>
+                    <span id="userid">seunghee</span></div>
+                <div> <label for="date">작성일</label>
+                    <span id="date">2020-12-23 16:01:00 (777)</span></div>
+                <div> <label for="contents">본문</label>
+                    <span id="contents">
+                        시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!
+                        시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!
+                        시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!
+                        시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!
+                        시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!
+                        시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!
+                        시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!
+                        시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!
+                        시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!
+                        시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!
+                        시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!, 참말이라구, 친구!
+                    </span></div>
+            </div>
+        </section>
+    </div>
+
+<!--<footer>-->
+<!--    <hr>-->
+<!--    <p style = "text-align : center"> copyright &copy; 2021. Seunghee. All Rights Reserved. </p>-->
+<!--</footer>-->
+</div>
+</body>
+</html>
