@@ -3,168 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/2_CSS3/normalize.css">
+    <link rel="stylesheet" href="/semiproject/2_layout2/layout2.css">
+    <style>
+        body { margin: 0; padding: 0; }
+        #container { width: 1150px;  margin: 0 auto; padding: 0px;
+                    border : 1px solid black;}
+        /* 공통사항 */
+        ul { list-style: none; padding: 0; margin: 0;}
+        li {  }
+
+        /*헤더*/
+        header { height: 125px; background: yellowgreen;}
+        header h1 { width: 250px; height: 125px; margin: 0;
+                    background: purple; float: left;}
+        header ul { float: right; }
+        header li { padding-right: 10px; font-weight: bold; float: left;}
+        #search { float:left; margin-left : 120px; margin-top: 0px; }
+        #search input { border: 3px solid green; height: 30px; width: 500px;
+                        margin-right: 10px;}
+        #search button { border: 3px solid green; width: 85px; height: 40px;
+                        color: white; font-size: 18px; font-weight: bold;
+                        background: green; vertical-align: bottom}
+        /*네비*/
+        nav { height: 35px; background: black; color: white; border: 1px solid black; }
+        nav ul { padding-left: 50px; margin-top: 7px; }
+        nav li { padding: 0 35px; font-weight: bold; font-size: 16px; float: left;}
+        
+        /*메인*/
+        #main { min-height: 800px; margin: 0px; }
+        
+        /*aside*/
+        aside { width:225px; float:left; }
+        #lgmenu {  }
+        #lgmenu li { float: left; font-size: 12px; padding: 10px 5px;}
+        aside hr { clear: both; border: 1px solid navy;}
+        #atlogin { margin-top: -5px; }
+        #atlogin li { float: left; font-size: 12px; padding: 2px 8px;}
+        #loginfrm {  }
+        #loginfrm li { float: left; }
+        #loginfrm input { width: 125px; margin: 2px 7px; }
+        #loginfrm button { width: 72px; height: 52px; position: relative; top: -26px;}
+        #notice { clear: both; background: lightyellow; 
+            padding: 1px 5px;}
+        #notice h3 { background: black; color: white; padding: 5px 1px;}
+        #notice ul { font-size: 14px;  }
+        #notice li { height: 25px; padding-left: 30px;
+            background: url(/image/free-icon-settings.png) no-repeat top left; }
+        #ad { height: 80px;  padding-left: 30px; margin: 10px;
+            border: 1px dashed black;
+            background: url(/image/youtube2.png) no-repeat top left; }
+
+        /*content*/
+        #content { width: 915px; float: right; background: orange;}
+        
+        /*welcome*/
+        #welcome { background: lightblue; width: 895px;
+            margin: 10px; height: 300px; }
+        #welcome h1 { font-family: Garamond; font-size: 55px; margin:-5px 0 0 10px;       padding: 10px 10px; }
+        #welcome p { width: 650px; padding-left: 30px; }
+
+        /*board*/
+        #board { width: 895px; margin: -5px 10px 10px 10px; } 
+        
+        #newinfo { width: 440px; float: left; background: ghostwhite; margin-right: 15px;} 
+        #newinfo h4 { background: black; color: white; padding: 5px 1px; margin: 0; margin-bottom: 20px; }
+        #newinfo ul { padding-left: 60px; }
+        #newinfo li { height: 35px; padding-left: 30px; margin-left: 15px;
+            background: url(/image/free-icon-heart.png) no-repeat top left; }
+        
+        #used { width: 440px; float:left; background: ghostwhite; }
+        #used h4 { background: black; color: white; padding: 5px 1px; margin: 0; margin-bottom: 20px;}
+        #used li { height: 35px; padding-left: 30px; margin-left: 10px; ;
+            background: url(/image/free-icon-star.png) no-repeat top left; }
+        
+        #gallery { clear: both; width: 895px; height: 370px;
+            margin: 390px 10px 10px 10px; background: beige; }
+        #gallery h3 { background: purple; color: white;  padding: 5px 1px;
+            margin: 0;}
+        #gallery li { float: left; padding-left: 65px; padding-top: 15px;  }
+        #gallery div { width: 100px; height: 100px;
+            border: 1px dashed gray; background: white; }
+        #gallery p { text-align: center; }
+        
+        /*footer*/
+        footer { height: 125px; background: green; clear: both; }
+        #fnav { height: 30px; background: navy; color: white; }
+        #fnav ul { margin-top: 7px; }
+        #fnav li { padding: 0 35px; padding-left: 55px; font-weight: bold;
+            font-size: 16px; float: left;}
+        footer p { text-align: right; margin: 40px 30px 0 0; font-weight: bold; }
+
+    </style>
 </head>
+    
 <body>
+    <div id="container">
 
-<header>
-    <h1>로고</h1>
-    <ul>
-        <li>회원정보</li>
-        <li>로그인</li>
-        <li>회원가입</li>
-    </ul>
-    <div></div>
-</header>
-
-<nav>
-    <ul>
-        <li>프로젝트 개요</li>
-        <li>공지사항</li>
-        <li>게시판</li>
-        <li>자료실</li>
-        <li>갤러리</li>
-        <li>커뮤니티</li>
-        <li>쇼핑몰</li>
-        <li>관리자</li>
-    </ul>
-</nav>
-
-<div>
-    <aside>
-        <div id ="login">
+        <header>
+            <h1>로고</h1>
             <ul>
+                <li>회원정보</li>
+                <li>로그인</li>
                 <li>회원가입</li>
-                <li>아이디 찾기</li>
-                <li>비밀번호 찾기</li>
             </ul>
-            <hr>
-            <ul>
-                <li>보안 접속 ON |</li>
-                <li>자동 로그인</li>
-            </ul>
-        </div>
-        <div id = "notice">
-            <ul>
-                <li><h4>공지사항</h4></li>
-                <li>아이유 사진은 업로드 금지</li>
-                <li>수지 사진은 업로드 환영</li>
-                <li>아이유 사진은 업로드 금지</li>
-                <li>수지 사진은 업로드 환영</li>
-                <li>아이유 사진은 업로드 금지</li>
-            </ul>
-            <p>
-                아이유 광고는 금지
-            </p>
-        </div>
-    </aside>
-    <div id = "content">
-        <div id ="welcome">
-            <h1>Hello, World!!</h1>
-            <p> ~~~~~~~~~~~~~~~~~~~~~~~~~ </p>
-        </div>
+            <div id="search">
+                <input type="text"><button type="button">검색</button>
+            </div>
+        </header>
 
-        <div id = "board">
-            <div>
-                <section>
-                    <ul id = "new info">
-                        <h4>최선정보</h4>
-                        <li>[SKT/번이] &gt;갤럭시S3-할인:0원&lt;</li>
-                        <li>[KT 번이/기변] 갤그랜드[0]</li>
-                        <li>[SKT/번이] &gt;갤럭시S3-할인:0원&lt;</li>
-                        <li>[KT 번이/기변] 갤그랜드[0]</li>
-                        <li>[SKT/번이] &gt;갤럭시S3-할인:0원&lt;</li>
-                        <li>[KT 번이/기변] 갤그랜드[0]</li>
-                        <li>[SKT/번이] &gt;갤럭시S3-할인:0원&lt;</li>
-                        <li>[KT 번이/기변] 갤그랜드[0]</li>
-                        <li>[SKT/번이] &gt;갤럭시S3-할인:0원&lt;</li>
+        <nav>
+            <ul>
+                <li>프로젝트 개요</li>
+                <li>공지사항</li>
+                <li>게시판</li>
+                <li>자료실</li>
+                <li>갤러리</li>
+                <li>커뮤니티</li>
+                <li>쇼핑몰</li>
+                <li>관리자</li>
+            </ul>
+        </nav>
+
+        <div id="main">
+            <aside>
+                <div id ="login">
+
+                    <ul id="lgmenu">
+                        <li>회원가입</li>
+                        <li>아이디 찾기</li>
+                        <li>비밀번호 찾기</li>
                     </ul>
-                </section>
-                <section>
-                    <ul id = "used">
-                        <li><h4>사용기 / 설치기</h4></li>
-                        <li>액스맨 감상기 [노스포]</li>
-                        <li>[Her] 감상기 - 개인평점 0/10</li>
-                        <li>아이패드 미니 1 간단한 사용기</li>
-                        <li>액스맨 감상기 [노스포]</li>
-                        <li>[Her] 감상기 - 개인평점 0/10</li>
-                        <li>아이패드 미니 1 간단한 사용기</li>
-                        <li>액스맨 감상기 [노스포]</li>
-                        <li>[Her] 감상기 - 개인평점 0/10</li>
-                        <li>아이패드 미니 1 간단한 사용기</li>
+                    <hr>
+                    <ul id="atlogin">
+                        <li>보안 접속 ON</li>
+                        <li> | </li>
+                        <li><input type="checkbox"> 자동 로그인</li>
                     </ul>
-                </section>
+                    <ul id="loginfrm">
+                        <li><input type="text" placeholder="아이디"></li>
+                        <li><input type="password" placeholder="비밀번호"></li>
+                        <li><button type="button">로그인</button></li>
+                    </ul>
+
+                </div>
+
+                <div id = "notice">
+                    <h3>공지사항</h3>
+                    <ul>
+                        <li>아이유 사진은 업로드 금지</li>
+                        <li>수지 사진은 업로드 환영</li>
+                        <li>아이유 사진은 업로드 금지</li>
+                        <li>수지 사진은 업로드 환영</li>
+                        <li>아이유 사진은 업로드 금지</li>
+                    </ul>
+                </div>
+                <div id="ad">
+                    YouTube Premium<br>
+                    광고 없는 YouTube<br>
+                    1개월 무료체험
+                </div>
+            </aside>
+
+            <div id = "content">
+                <div id ="welcome">
+                    <h1>Hello, World!!</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                </div>
+
+                <div id = "board">
+                    <div>
+                        <section>
+                            <ul id = newinfo>
+                                <h4>최선정보</h4>
+                                <li>[SKT/번이] &gt;갤럭시S3-할인:0원&lt;</li>
+                                <li>[KT 번이/기변] 갤그랜드[0]</li>
+                                <li>[SKT/번이] &gt;갤럭시S3-할인:0원&lt;</li>
+                                <li>[KT 번이/기변] 갤그랜드[0]</li>
+                                <li>[SKT/번이] &gt;갤럭시S3-할인:0원&lt;</li>
+                                <li>[KT 번이/기변] 갤그랜드[0]</li>
+                                <li>[SKT/번이] &gt;갤럭시S3-할인:0원&lt;</li>
+                                <li>[KT 번이/기변] 갤그랜드[0]</li>
+                                <li>[SKT/번이] &gt;갤럭시S3-할인:0원&lt;</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <ul id = "used">
+                                <h4>사용기 / 설치기</h4>
+                                <li>액스맨 감상기 [노스포]</li>
+                                <li>[Her] 감상기 - 개인평점 0/10</li>
+                                <li>아이패드 미니 1 간단한 사용기</li>
+                                <li>액스맨 감상기 [노스포]</li>
+                                <li>[Her] 감상기 - 개인평점 0/10</li>
+                                <li>아이패드 미니 1 간단한 사용기</li>
+                                <li>액스맨 감상기 [노스포]</li>
+                                <li>[Her] 감상기 - 개인평점 0/10</li>
+                                <li>아이패드 미니 1 간단한 사용기</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+                <div id = "gallery">
+                    <h3>이미지 갤러리</h3>
+                    <ul>
+                        <li>
+                            <div> </div>
+                            <p><a href="#">수지환영</a></p>
+                        </li>
+                        <li>
+                            <div> </div>
+                            <p><a href="#">수지환영</a></p>
+                        </li>
+                        <li>
+                            <div> </div>
+                            <p><a href="#">수지환영</a></p>
+                        </li>
+                        <li>
+                            <div> </div>
+                            <p><a href="#">수지환영</a></p>
+                        </li>
+                        <li>
+                            <div> </div>
+                            <p><a href="#">수지환영</a></p>
+                        </li>
+                        <li>
+                            <div> </div>
+                            <p><a href="#">수지환영</a></p>
+                        </li>
+                        <li>
+                            <div> </div>
+                            <p><a href="#">수지환영</a></p>
+                        </li>
+                        <li>
+                            <div> </div>
+                            <p><a href="#">수지환영</a></p>
+                        </li>
+                        <li>
+                            <div> </div>
+                            <p><a href="#">수지환영</a></p>
+                        </li>
+                        <li>
+                            <div> </div>
+                            <p><a href="#">수지환영</a></p>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div id = "gallery">
-            <ul>
-                <li><h4>이미지 갤러리</h4></li>
-                <li>
-                    <div> </div>
-                    <p><a href="#">수지환영</a></p>
-                </li>
-                <li>
-                    <div> </div>
-                    <p><a href="#">수지환영</a></p>
-                </li>
-                <li>
-                    <div> </div>
-                    <p><a href="#">수지환영</a></p>
-                </li>
-                <li>
-                    <div> </div>
-                    <p><a href="#">수지환영</a></p>
-                </li>
-                <li>
-                    <div> </div>
-                    <p><a href="#">수지환영</a></p>
-                </li>
-                <li>
-                    <div> </div>
-                    <p><a href="#">수지환영</a></p>
-                </li>
-                <li>
-                    <div> </div>
-                    <p><a href="#">수지환영</a></p>
-                </li>
-                <li>
-                    <div> </div>
-                    <p><a href="#">수지환영</a></p>
-                </li>
-                <li>
-                    <div> </div>
-                    <p><a href="#">수지환영</a></p>
-                </li>
-                <li>
-                    <div> </div>
-                    <p><a href="#">수지환영</a></p>
-                </li>
+        
+        <footer>
+            <ul id = "fnav">
+                <li>이용약관</li>
+                <li>개인정보보호방침</li>
+                <li>이메일무단수집거부</li>
+                <li>고객지원</li>
+                <li>권리침해신고</li>
+                <li>광고문의</li>
             </ul>
-        </div>
+            <section>
+            </section>
+            <section>
+                <p>
+                    Copyright(c) 2020. seunghee. All Right Reserved/ Designed by HTML5, CSS3 <br>
+                    I Infinite, Cupertino, CA 95014. 개인정보 관리책임자 : 스티브잡스 steve@apple.com
+                </p>
+            </section>
+        </footer>
+
+
+
+
+
     </div>
-</div>
-<footer>
-    <ul id = "nav">
-        <li>이용약관</li>
-        <li>개인정보보호방침</li>
-        <li>이메일무단수집거부</li>
-        <li>고객지원</li>
-        <li>권리침해신고</li>
-        <li>광고문의</li>
-    </ul>
-    <section>
-    </section>
-    <section>
-        <p>
-            Copyright(c) 2020. seunghee. All Right Reserved/ Designed by HTML5, CSS3 <br>
-            I Infinite, Cupertino, CA 95014. 개인정보 관리책임자 : 스티브잡스 steve@apple.com
-        </p>
-    </section>
-</footer>
-
-
-
-
-
-
 </body>
 </html>

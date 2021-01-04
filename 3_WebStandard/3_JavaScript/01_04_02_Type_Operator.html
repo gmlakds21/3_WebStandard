@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Type and Operator</title>
+</head>
+
+
+<!--
+자바스크립트 타입
+크게 3가지 타입 지원 : 숫자, 문자형, 논리형
+
+-->
+<body>
+    <h2>숫자형, 문자형, 논리형</h2>
+    <script>
+
+        let num1 = 123;
+        let num2 = 123.456;
+        let num3 = 10e3;  // 10 x 10 x 10;
+
+        document.write(num1, '<br>');
+        document.write(num2, '<br>');
+        document.write(num3, '<br>');
+        document.write('<br>');
+
+        let str1 = "Hello, World!!";
+        let str2 = 'Hello, World!!';
+
+        document.write(str1, '<br>');
+        document.write(str2, '<br>');
+        document.write('<br>');
+
+        let bool1 = 10 > 5;
+        document.write('10 > 5 ?', '<br>');
+        document.write(bool1, '<br>');
+        document.write('<br>');
+    </script>
+
+    <h2>객체형</h2>
+    <script>
+        /* 단일변수에 여러 타입의 값을 저장한 것
+           객체를 구성하는 변수들은 property 라 하고
+           함수들은 method 라고 함
+           객체의 속성이나 함수에 접근하려면 객체명.속성명, 객체명.함수명을 사용 */
+        let person = { name:'혜교', kor: 99, eng: 94, mat:98 };
+
+        document.write(person.name+'<br>');
+        document.write(person.kor+'/'+person.eng+'/'+person.mat+'<br>');
+        document.write('<br>')
+    </script>
+
+    <h2>null 과 undefined</h2>
+    <script>
+        /* 변수 선언시 초기화 하지 않으면 null 형으로 정의
+           초기화되지 않은 변수를 호출/사용하면 undefined 로 출력 */
+        let data;
+        document.write(data+'<br>')
+        document.write('<br>')
+
+        /* 자바스크립트는 변수의 자료형 검사가 유연한 편임 (weakly typed)
+           즉, 이미 선언한 변수에 다른 종류의 값을 대입할 수 있음 */
+        let one = 123;
+        document.write(one+'<br>')
+        one = 'Hello'
+        document.write(one+'<br>')
+        document.write('<br>')
+
+        // 묵시적 형변환
+        let two = 10 + ' Hello';
+        document.write(two,'<br>');
+        let three = '3' * '5';
+        document.write(three,'<br>');
+        let four = 'world' - 999;
+        document.write(four,'<br>')
+        // 자동 형변환이 실패해서 적절한 값을 출력하지 못하는 경우
+        // NaN (Not a Number)로 출력
+        document.write('<br>')
+    </script>
+
+    <h2>명시적 형변환</h2>
+    <script>
+        // Number, String, parseInt, parseFloat
+        document.write(Number('123'),'<br>');
+        document.write(String(123),'<br>');
+        document.write(parseInt('123'),'<br>');
+        document.write(parseFloat('456.789'),'<br>');
+        document.write('<br>')
+
+        // Number vs parseInt
+        document.write(Number('001'),'<br>');
+        document.write(parseInt('001'),'<br>');
+        document.write(Number('2021년'),'<br>');
+        document.write(parseInt('2021년'),'<br>');
+        document.write(Number('총3500원'),'<br>');
+        document.write(parseInt('총3500원'),'<br>');
+        document.write('<br>')
+    </script>
+
+    <h2>연산자</h2>
+    <script>
+        /*
+            자바스크립트 연산자
+            산술 연산자 : + - * / %
+            대입 연산자 : = += -= *= /= %=
+            중감 연산자 : ++A A++ --A A--
+            비교 연산자 : == != > >= < <= (값과 타입의 동질성여부 ===, !==)
+            논리 연산자 : && || !
+            기타 연산자 : + (문자열 결합), ? : (3항 연산자), typeof (변수의 타입을 출력)
+         */
+
+        // 증감 연산자
+        let x = 10, y = 10;
+        document.write((++x + 3)+'<br>');
+        document.write((y++ + 3)+'<br>');
+
+        y = x-- +5 + --y;
+        document.write((y)+"<br>");
+        document.write('<br>');
+
+        // 동등 동일 비교 연산자
+        let a=3, b=3, c='3';
+
+        document.write((a==b)+'<br>');
+        document.write((a===b)+'<br>');
+        document.write((a==c)+'<br>');
+        document.write((a===c)+'<br>');
+        document.write('<br>')
+
+        // 변수 유형 알아보기
+        document.write(typeof(num1)+'<br>');
+        document.write(typeof(str1)+'<br>');
+        document.write(typeof(bool1)+'<br>');
+        document.write(typeof(person)+'<br>');
+    </script>
+</body>
+
+</html>
