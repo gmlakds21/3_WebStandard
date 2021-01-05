@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>조건문 : if</h2>
+    <script>
+        // 조건문 : 주어진 식의 결과에 따라 별도의 명령을 수행 (분기문)
+        // 성적 처리 프로그램
+
+        // 1. 변수 선언
+        let name = '혜교';
+        let kor = 99;
+        let eng = 99;
+        let mat = 98;
+        let tot = 0;
+        let avg = 0;
+        let grd = 0;
+
+        // 2. 성적 처리
+        tot = kor + eng + mat;
+        avg = tot/3;
+        if ( avg > 90 ) { grd = '수'; }
+        else if ( avg > 80 ) { grd = '우'; }
+        else if ( avg > 70 ) { grd = '미'; }
+        else if ( avg > 60 ) { grd = '양'; }
+        else { grd = '가'; }
+
+        // 3. 결과 출력
+        document.write('이름 : '+name+'<br>');
+        document.write('국어 : '+kor+'<br>');
+        document.write('영어 : '+eng+'<br>');
+        document.write('수학 : '+mat+'<br>');
+        document.write('총점 : '+tot+'<br>');
+        document.write('평균 : '+Math.round(avg*100)/100+'<br>');
+        document.write('평균 : '+avg.toFixed(2)+'<br>');
+        document.write('학점 : '+grd+'<br>');
+    </script>
+
+    <h2>다중 조건문 : switch</h2>
+    <script>
+        // 조건이 많은 경우 if 문보다 switch 문을 추천
+        switch ( Math.round(avg/10) ) {
+            case 10 :
+            case 9 : grd = '수'; break;
+            case 8 : grd = '우'; break;
+            case 7 : grd = '미'; break;
+            case 6 : grd = '양'; break;
+            case 5 : grd = '가'; break;
+            default : grd = '불' ; break;
+        }
+        document.write(grd+'<br>');
+    </script>
+
+    <h2>연습</h2>
+    <script>
+        // 오늘 날짜의 요일을 한글로 출력하는 프로그램 작성
+        // 오늘의 요일 : new Date().getDay() 이용
+        // 0: 일요일, 1:월요일, ... 6:토요일
+
+        let date = new Date( ).getDay()
+        switch ( date ) {
+            case 0 : date = '일요일'; break;
+            case 1 : date = '월요일'; break;
+            case 2 : date = '화요일'; break;
+            case 3 : date = '수요일'; break;
+            case 4 : date = '목요일'; break;
+            case 5 : date = '금요일'; break;
+            case 6 : date = '토요일'; break;
+        }
+        document.write('오늘은 '+date+'입니다.<br>')
+
+        let today = new Date();
+        document.write(today.getFullYear() +'년 ');
+        document.write(today.getMonth()+1 +'월 ');
+        document.write(today.getDate() +'일<br>');
+
+        document.write(today.getHours() +'시 ');
+        document.write(today.getMinutes() +'분 ');
+        document.write(today.getSeconds() +'초<br>');
+    </script>
+</body>
+</html>

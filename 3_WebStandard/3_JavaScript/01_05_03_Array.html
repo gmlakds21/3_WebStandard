@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>배열</h2>
+    <script>
+        // 배열 : 동일한 자료형으로 구성된 값들의 집합 각 값들은 위치값 으로 참조가능
+        // 변수명 = [값, 값, 값]
+        // 변수명 = Array(값, 값, 값)
+        // 변수명 = new Array(값, 값, 값)
+
+        // 성적 처리 프로그램
+        let names = ['혜교', '지현', '수지'];
+        let kors = [99, 88, 77];
+        let engs = Array(98, 87, 75);
+        let mats = new Array(93, 82, 71);
+
+        let tots = [0, 0, 0];
+        let avgs = [0, 0, 0];
+        let grds = [0, 0, 0];
+
+
+        for ( let i = 0; i<3; i++ ) {
+            tots[i] = kors[i] + engs[i] + mats[i];
+            avgs[i] = Math.round(tots[i]/3*100)/100;
+
+            switch ( Math.round(avgs[i]/10) ) {
+                case 10 :
+                case 9 : grds[i] = '수'; break;
+                case 8 : grds[i] = '우'; break;
+                case 7 : grds[i] = '미'; break;
+                case 6 : grds[i] = '양'; break;
+                default : grds[i] = '가';
+            }
+
+            document.write(names[i],' - ',kors[i],' ',engs[i],' ',mats[i],' / ',tots[i],' ',avgs[i],' / ',grds[i],'<br>');
+        }
+
+
+    </script>
+</body>
+</html>

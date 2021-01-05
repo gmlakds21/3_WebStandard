@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>반복문</h2>
+    <script>
+        // 반복문 : 특정명령을 지정한 횟수만큼 반복 수행하는 실행문
+
+        // 1 ~ 10 까지 정수 출력
+        let i = 1;
+
+        while ( i<= 10 ) {
+            document.write(i+' ');
+            i++;
+        }
+        document.write('<br>');
+        document.write('<br>');
+
+        for (let j=1; j<=10; j++) {
+            document.write(j+' ');
+        }
+        document.write('<br>');
+        document.write('<br>');
+
+        // 1 ~ 100 짝수 출력
+        let k = 2;
+        while (k<=100) {
+            document.write(k+' ')
+            k += 2;
+        }
+        document.write('<br>');
+        document.write('<br>');
+    </script>
+
+    <h2>객체를 반복문으로 다루기</h2>
+    <script>
+        // 단일 객체를 반복문으로 다루기
+        {
+            let person = {name: '홍길동', kor: 99, eng: 98, mat: 97}
+
+            // 객체의 속성을 출력하려면 '객체명.속성명', '객체명['속성명']'
+            document.write(person.name, ' ', person.kor, ' ', person.eng, ' ', person.mat, '<br>')
+            document.write(person['name'], ' ', person['kor'], ' ', person['eng'], ' ', person['mat'], '<br>')
+            document.write('<br>');
+
+            // 객체의 속성을 반복문으로 출력하기
+            // for in 구문은 객체 속성을 추출함
+            for (let i in person)
+                document.write(i + ' : ' + person[i] + '<br>');
+            document.write('<br>')
+        }
+
+        // 여러 개의 객체를 반복문으로 다루기
+        {
+            let persons = [{name: '혜교', age: 35}, {name: '지현', age: 30}, {name: '수지', age: 30}]
+
+            // for in 구문
+            for (let j in persons) {
+                for (let k in persons[j]) {
+                    document.write(persons[j][k] + ' ');
+                }
+            }
+            document.write('<br>');
+
+            // for of 구문
+            for (let person of persons ) {
+                for (let p in person) {
+                    document.write(person[p]+' ');
+                }
+            }
+            document.write('<br>');
+
+        }
+    </script>
+</body>
+</html>
