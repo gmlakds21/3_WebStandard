@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h2>Event</h2>
+    <!--
+    html 요소에 발생하는 어떤 사건(마우스 클릭, 키 입력, 브라우저 크기 변경)을 의미
+    특정 요소에 어떤 사건이 발생되면 웹 브라우져가 이것을 감지해서 알려줌
+    개발자는 이것을 이용해서 어떤 사건에 대한 처리를 구현할 수 있음
+    이러한 개발 방식을 이벤트중심 event-driven 프로그래밍이라 함
+
+    event 종류
+    load - 웹브라우져가 웹문서를 읽었을 때
+    click - 클릭시
+    dblclick - 더블 클릭시
+    mouseover - 마우스 포인터를 특정요소에 올렸을 때
+    mouseout - 마우스 포인터가 벗어났을 때
+    keydown - 키를 눌렀을 때
+    keyup - 키를 눌렀다가 땟을 때
+    focus - 마우스로 특정요소를 선택했을 때
+    blur - 마우스로 특정요소를 선택 해제했을 때
+    submit - submit 버튼을 클릭했을 때
+    change - 폼요소의 내용이 변경되었을 때
+
+    event 처리 관련 용어
+    이벤트 이름 : event 종류를 지정하는 단어 (ex: click)
+    이벤트 속성 : 이벤트 이름에 on 접두사를 붙인것 (ex: onclick)
+    이벤트리스너 : 이벤트 속성에 지정한 함수, 이벤트 발생시 처리할 함수 지정
+
+    event 등록 방법
+    인라인 이벤트 (정적 이벤트) : 요소에 on-속성으로 이벤트 함수 지정
+                            이벤트 처리함수를 1개만 등록할 수 있음
+                            코드가 지저분해지고 유지보수가 어려워짐
+    표준 이벤트 (동적 이벤트) : 자바스크립트를 이용해서 웹문서가 브라우저에 의해
+                            load 되었을 때 요소에 이벤트를 등록하고 처리
+                            요소명.addEventListener (이벤트, 함수, 캡처링);
+                            요소명.removeEventListener (이벤트, 함수);
+    -->
+    <button type="button" onclick="alert('Hello, World!!')">눌러보세요!1</button>
+
+
+    <button type="button" onclick="sayHello()">눌러보세요!2</button>
+    <script>
+        function sayHello( ) { alert("Hello, World, again!!"); }
+    </script>
+
+
+    <button type="button" id="btn3">눌러보세요!3</button>
+    <script>
+        window.onload = function ( ) {
+            let btn3 = document.getElementById('btn3');
+            btn3.onclick = sayHello;
+        }
+        // 표준 이벤트 처리방식 (고전)
+        // 인라인 이벤트 처리방식에 비해 코드가 단출  - 유지보수 용이
+    </script>
+
+
+    <button type="button" id="btn4">눌러보세요!4</button>
+    <script>
+        let btn4 = document.getElementById('btn4');
+        btn4.addEventListener('click', sayHello);
+        // 표준 이벤트 처리 방식
+        // window.onload 를 사용하지않고도 이벤트 정의 가능
+        // 표준 이벤트 처리방식 (고전) 방식보다도 코드가 단출
+    </script>
+
+
+
+    <h2>성적 처리 프로그램</h2>
+    <form name="sjfrm">
+        <div>이름 : <input type="text" name="name"></div>
+        <div>국어 : <input type="text" name="kor"></div>
+        <div>영어 : <input type="text" name="eng"></div>
+        <div>수학 : <input type="text" name="mat"></div>
+        <div><button type="button" id="sjbtn">입력완료</button></div>
+    </form>
+    <script>
+        // 이름, 궁어, 영어, 수학 요소 변수를 가져옴
+        let name = document.sjfrm.name;
+        let kor = document.sjfrm.kor;
+        let eng = document.sjfrm.eng;
+        let mat = document.sjfrm.mat;
+
+        // 이벤트를 지정할 버튼요소 초기화
+        let sjbtn = document.getElementById('sjbtn');
+        sjbtn.addEventListener('click', computeSungJuk);
+
+        function checkSungJuk() {
+
+            let result = '';
+
+            if (name.value == '') {
+                result += '이름을 입력하세요 \n';
+                name.focus();       // 바로 입력할 수 있도록 요소에 커서를 띄움
+            }
+
+            if (kor.value == '') {
+                result += '국어 점수를 입력하세요 \n';
+                kor.focus();
+            }
+
+            if (eng.value == '') {
+                result += '영어 점수를 입력하세요 \n';
+                eng.focus();
+            }
+
+            if (mat.value == '') {
+                result += '수학 점수를 입력하세요 \n';
+                mat.focus();
+            }
+
+            if ((mat.value < 0 || mat.value > 100) ||
+                (mat.value < 0 || mat.value > 100) ||
+                (mat.value < 0 || mat.value > 100)) {
+                result += '점수를 확인하세요 \n';
+            }
+
+            return result;
+        }
+
+        // computeSungJuk 함수 선언
+        function computeSungJuk() {
+
+            let result = checkSungJuk()
+            if ( result != '') {
+                alert(result);
+                return;
+            }
+
+            let tot = parseInt(kor.value)+parseInt(eng.value)+parseInt(mat.value);
+            let avg = Math.round(tot/3*100)/100;
+            let grd =' ';
+            switch ( Math.round(avg/10) ) {
+                case 10 :
+                case 9 : grd = '수'; break;
+                case 8 : grd = '우'; break;
+                case 7 : grd = '미'; break;
+                case 6 : grd = '양'; break;
+                default : grd = '가';
+            }
+
+            alert(name.value+' : '+kor.value+' '+eng.value+' '+mat.value+'\n'+tot+' '+avg+' '+grd);
+        }
+    </script>
+
+
+    <h2>로그인 처리프로그램</h2>
+    <!--
+    아이디, 비밀번호를 설정해두고
+    폼을 통해 입력받은 아이디, 비밀번호를 비교해서
+    일치하면 '로그인 성공!' 일치하지 않으면 '로그인 실패!' 라는 메세지를 출력
+    폼 이름은 loginfrm 으로 설정
+    -->
+    <form name="loginfrm">
+        <div>아이디 : <input type="text" name="userid"></div>
+        <div>비밀번호 : <input type="password" name="userpw"></div>
+        <div><button type="button" id="loginbtn">로그인</button></div>
+    </form>
+    <script>
+        let setid = 'userid';
+        let setpw = 'passwd';
+
+        let userid = document.loginfrm.userid;
+        let userpw = document.loginfrm.userpw;
+
+        let loginbtn = document.getElementById('loginbtn');
+        loginbtn.addEventListener('click', userLogin);
+
+        function checkLogin() {
+
+            let result = '';
+
+            if ( userid.value =='' ) {
+                result += '아이디를 입력해주세요 \n';
+                userid.focus();
+            }
+            if ( userpw.value =='' ) {
+                result += '비밀번호를 입력해주세요 \n';
+                userpw.focus();
+            }
+
+            return result;
+        }
+
+
+        function userLogin() {
+
+            let result = checkLogin();
+            if ( result != '') {
+                alert(result);
+                return;
+            }
+
+
+
+            if ( (setid == userid.value)&&(setpw == userpw.value) ) {
+                alert('로그인 성공!')
+            } else {
+                alert('로그인 실패!')
+            }
+        }
+
+    </script>
+</body>
+</html>

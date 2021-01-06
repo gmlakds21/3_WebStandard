@@ -56,52 +56,5 @@
         document.write(sum);
     </script>
 
-
-    <h2>익명 함수</h2>
-    <script>
-        // 함수를 정의할 때 이름을 지정하지 않은 함수를 의미
-        // 함수를 실행하려면 반드시 함수명을 호출해야 하는데
-        // 익명함수는 함수정의와 동시에 함수ㅠ를 실행할 수 도 있음
-
-
-        // 간단한 인삿말을 출력하는 함수
-        function sayHello(msg) {
-            document.write(msg+' ');
-        }
-        sayHello('Hello, World!! <br><br>')
-
-        // 익명함수 정의후 변수에 저장 : C 언어의 함수포인터와 유사
-        let sayHello2 = function (msg) {
-            document.write(msg+' ');
-        };
-        sayHello2('Hello, JavaScript!!');
-    </script>
-
-
-    <h2>특정 함수를 주기적으로 실행하기</h2>
-    <span id="time"></span>
-    <script>
-        // 주기적으로 특정함수를 실행하려면 setInterval 과
-        // setTimeout 함수를 사용하면 됨
-        // setInterval : 일정시간 간격으로 함수를 반복실행 clearInterval 함수로 중지시킬 수 있음
-        //              setInterval(함수명, 주기(ms))
-
-        // serTimeout : 일정시간이 지난후 함수를 실행 clearTimeout 함수로 중지시킬 수 있음
-        //              setTimeout(함수명, 시간(ms))
-
-        function today() {
-            let today = new Date();
-            let hh = today.getHours()
-            let mm = today.getMinutes()
-            let ss = today.getSeconds()
-            let time = hh+':'+mm+':'+ss;
-            document.getElementById('time').innerHTML = time;
-        }
-        today();        // 현재 시간을 span 에 찍어주는 함수
-
-        setInterval( today, 1000);     // 1초 마다 today 함수 실행
-
-
-    </script>
 </body>
 </html>

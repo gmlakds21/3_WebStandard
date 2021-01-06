@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table { width: 75%; margin: 0 auto; border-collapse: collapse; table-layout: fixed;}
+        th, td { border: 1px solid black; text-align: center; padding: 5px;}
+    </style>
+</head>
+
+<body>
+    <h2>테이블 생성하기</h2>
+    <table>
+        <colgroup>
+            <col  style="width:10%">
+            <col>
+            <col  style="width:15%">
+            <col  style="width:15%">
+            <col  style="width:10%">
+        </colgroup>
+        <thead>
+            <tr> <th>번호</th> <th>제목</th> <th>작성자</th> <th>작성일</th> <th>조회</th> </tr>
+        </thead>
+        <tbody>
+            <script>
+                for ( let i = 0; i <15; i++ ) {
+                    document.write(
+                        "<tr>"
+                           + "<td>"+(15-i)+"</td>"
+                           + "<td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!</a></td>"
+                           + "<td>seunghee</td>"
+                           + "<td>2020-12-23</td>"
+                           + "<td>777</td>"
+                       + "</tr>");
+                }
+            </script>
+        </tbody>
+    </table>
+    <hr>
+
+
+    <h2>동적으로 테이블 생성하기</h2>
+    <table id="table">
+        <colgroup>
+            <col  style="width:10%">
+            <col>
+            <col  style="width:15%">
+            <col  style="width:15%">
+            <col  style="width:10%">
+        </colgroup>
+        <script>
+            // table -> tbody -> tr -> th/td -> 텍스트 순으로 요소 생성
+            // 텍스트 -> th/td -> tr -> tbody -> table 순으로 자식요소 추가
+            let table = document.getElementById('table')
+            let tbody = document.createElement('tbody');
+            let tr = document.createElement('tr');
+            let th = document.createElement('th');
+            let td = document.createElement('td');
+            let txt = null;
+            let idx1 = ["번호","제목","작성자","작성일","조회수"];
+            let idx2 = ["","시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!","seunghee","2020-12-23","777"];
+
+            tr = document.createElement('tr');
+            for ( let i = 0; i <5; i++ ) {
+                txt = document.createTextNode(idx1[i]);
+                th.appendChild(txt);
+                tr.appendChild(th);
+            }
+            tbody.appendChild(tr);
+
+            tr = document.createElement('tr');
+            for ( let i = 0; i < 5; i++ ) {
+                txt = document.createTextNode(idx2[i]);
+                td.appendChild(txt);
+                tr.appendChild(td)
+            }
+            tbody.appendChild(tr);
+
+            table.appendChild(tbody);
+        </script>
+        <hr>
+        <script>
+            let table = document.getElementById('table')
+            let tbody = document.createElement('tbody');
+            let tr = document.createElement('tr');
+            let th = document.createElement('th');
+            let td = document.createElement('td');
+            let txt = null;
+            let idx = [["번호", "제목", "작성자", "작성일", "조회수"],
+                       ["", "시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!", "seunghee", "2020-12-23", "777"]];
+
+            for (let j = 0; j < 2; j++) {
+                tr = document.createElement('tr');
+                for (let i = 0; i < 5; i++) {
+                    txt = document.createTextNode(idx[j][i]);
+                }
+                if (j = 0) {
+                    th.appendChild(txt);
+                    tr.appendChild(th);
+                }
+                if (j = 1) {
+                    td.appendChild(txt);
+                    tr.appendChild(td);
+                }
+                tbody.appendChild(tr);
+            }
+            table.appendChild(tbody);
+        </script>
+
+    </table>
+</body>
+</html>
