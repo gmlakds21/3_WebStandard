@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Screen 객체</h2>
+    <!--
+    사용자의 디스플레이에 대한 다양한 정보를 제어하는 객체
+    화면크기, 색상에 대한 정보를 알 수 있음
+
+    screen.width
+    screen.height
+    BOM에서 살짝 다룸
+    -->
+
+
+    <h2>Location 객체</h2>
+    <!--
+    현재 브라우저가 표시하는 문서의 url 을 얻거나
+    브라우저에 표시할 문서의 위치를 지정할 수 있음
+    location.href     : 현재 브라우저 url 조회/변경
+    location.hostname : 현재 문서의 url 중 호스트 조회
+    location.pathname : 현재 문서의 url 중 파일경로 조회
+    -->
+    <div>
+        <button type="button" id="gbtn">구글로</button>
+        <button type="button" id="nbtn">네이버로</button>
+        <button type="button" id="dbtn">다음으로</button>
+    </div>
+
+    <script>
+        let url = location.href;
+
+        document.write('문서 url : '+location.href+'<br>');
+        document.write('url의 호스트 : '+location.hostname+'<br>');
+        document.write('url의 파일경로 : '+location.pathname+'<br>');
+    </script>
+
+    <script>
+        let gbtn = document.getElementById('gbtn');
+        let nbtn = document.getElementById('nbtn');
+        let dbtn = document.getElementById('dbtn');
+
+        gbtn.addEventListener('click', function()
+        {location.href="http://google.co.kr";} );
+
+        nbtn.addEventListener('click', function()
+        {location.href="http://naver.com";} );
+
+        dbtn.addEventListener('click', function()
+        {location.href="http://dawm.net";} );
+    </script>
+
+
+    <h2>Navigator 객체</h2>
+    <!--
+        웹페이지를 실행하는 브라우저의 정보를 알 수 있음
+        즉, 운영체제 종류나 브라우저 유형을 볼 수 있음
+        appCodeName : 브라우저 코드네임
+        appName     : 브라우저 이름
+        appVersion  : 브라우저 버전
+        platform    : 브라우저가 실행중인 시스템 환경
+        userAgent   : 브라우저의 전체 정보
+    -->
+    <script>
+        let appname = navigator.appName;
+        let appcode = navigator.appCodeName;
+        let appver = navigator.appVersion;
+        let ua = navigator.platform;
+        let os = navigator.userAgent;
+
+        document.write(appname+'<br>');
+        document.write(appcode+'<br>');
+        document.write(appver+'<br>');
+        document.write(ua+'<br>');
+        document.write(os+'<br>');
+
+        // 사용자 브라우저에 따라 인사말을 다르게 출력
+        // IE : IE를 사용중
+        // FF : FF를 사용중
+        // CR : CR를 사용중
+        // EG : EG를 사용중중
+    </script>
+</body>
+</html>

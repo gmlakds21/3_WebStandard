@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>주소 검색</h2>
+    <!--
+        전극 시도 중 하나를 선택하면
+        선택한 시도에 대한 시군구가 다음 select 에 목록으로 출력되고
+        시군구 중 ㅎ나를 선택하면 선택한 시군구에 대한 읍면동이 다음 select 에
+        목록으로 출력되도록함
+        포인트 1 : 이벤트 발생시 option 태그가 동적으로 생성
+        포인트 2 : select 에서 발생가능한 이벤트는 change
+        포인트 3 : select 에서 선택한 항목의 정보는 selectedIndex 속성을 이용
+        포인트 4 : option 태그에 text 추가하려면 createTextNode 를 이용
+    -->
+    <div>
+        <select id ="sido">
+            <option>-시도-</option>
+            <option>서울특별시</option>
+            <option>경기도</option>
+            <option>인천광역시</option>
+            <option>부산광역시</option>
+        </select>
+
+        <select id ="gugun">
+            <option>-시/군/구</option>
+        </select>
+
+        <select id ="dong">
+            <option>-읍/면/동-</option>
+        </select>
+    </div>
+    <p id = "addr"></p>
+    <script>
+        let sd = ['-시/도-','서울특별시','경기도','인천광역시','부산광역시'];
+        let gg = [['-시/군/구-'],
+                  ['-시/군/구-','강남구','서초구','송파구'],
+                  ['-시/군/구-','광명시','구리시','성남시','수원시','고양시'],
+                  ['-시/군/구-','연수구','남동구','서구'],
+                  ['-시/군/구-','동래구','해운대구','기장군']];
+        let ymd = [ [['-읍/면/동-']],
+                    [['-읍/면/동-'], ['-읍/면/동-','논현동', '대치동', '삼성동'],
+                                    ['반포동', '방배동', '양재동'],
+                                    ['가락동', '석촌동', '잠실동']],
+                    [['-읍/면/동-'], ['-읍/면/동-','1'],['-읍/면/동-','2'],['-읍/면/동-','3'],['-읍/면/동-','4'],['-읍/면/동-','5']],
+                    [['-읍/면/동-'], ['-읍/면/동-','a'],['-읍/면/동-','b'],['-읍/면/동-','c']],
+                    [['-읍/면/동-'], ['-읍/면/동-','A'],['-읍/면/동-','B'],['-읍/면/동-','C'],['-읍/면/동-','D']]];
+
+        let sido = document.getElementById('sido');
+        let gugun = document.getElementById('gugun');
+        let dong = document.getElementById('dong');
+
+       let sidx;
+        sido.addEventListener('change', makegu);
+
+        let gidx;
+        gugun.addEventListener('change', makedong);
+
+        let addr = document.getElementById('addr')
+        dong.addEventListener('change', showaddr);
+
+        function makegu() {
+            sidx = sido.selectedIndex;
+            // 선택한 시도의 index 값을 알아냄
+            // alert(sidx);
+            while (gugun.lastChild) {
+                gugun.removeChild(gugun.lastChild)
+            }
+            for ( let g of gg[sidx]) {
+                let opt = document.createElement('option');
+                let txt = document.createTextNode(g);
+                opt.appendChild(txt);
+                gugun.appendChild(opt);
+            }
+        }
+
+        function makedong() {
+            gidx = gugun.selectedIndex;
+            while (dong.lastChild) {
+                dong.removeChild(dong.lastChild)
+            }
+            for ( let d of ymd[sidx][gidx]) {
+                let opt = document.createElement('option');
+                let txt = document.createTextNode(d);
+                opt.appendChild(txt);
+                dong.appendChild(opt);
+            }
+        }
+
+        function showaddr() {
+            let ymdong = ' ';
+            if (dong.value != '-읍/면/동-') ymdong = dong.value;
+            let result = sido.value+' '+gugun.value+' '+dong.value;
+            addr.innerHTML = result;
+        }
+
+    </script>
+
+</body>
+</html>

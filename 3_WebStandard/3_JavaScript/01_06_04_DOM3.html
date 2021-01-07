@@ -41,7 +41,7 @@
 
 
     <h2>동적으로 테이블 생성하기</h2>
-    <table id="table">
+    <table id="table1">
         <colgroup>
             <col  style="width:10%">
             <col>
@@ -49,65 +49,79 @@
             <col  style="width:15%">
             <col  style="width:10%">
         </colgroup>
-        <script>
-            // table -> tbody -> tr -> th/td -> 텍스트 순으로 요소 생성
-            // 텍스트 -> th/td -> tr -> tbody -> table 순으로 자식요소 추가
-            let table = document.getElementById('table')
-            let tbody = document.createElement('tbody');
-            let tr = document.createElement('tr');
-            let th = document.createElement('th');
-            let td = document.createElement('td');
-            let txt = null;
-            let idx1 = ["번호","제목","작성자","작성일","조회수"];
-            let idx2 = ["","시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!","seunghee","2020-12-23","777"];
+    </table>
+    <script>
+        // table -> tbody -> tr -> th/td -> 텍스트 순으로 요소 생성
+        // 텍스트 -> th/td -> tr -> tbody -> table 순으로 자식요소 추가
+        let table = document.getElementById('table1')
+        let tbody = document.createElement('tbody');
+        let tr = null;
+        let th = null;
+        let td = null;
+        let txt = null;
+        let idx1 = ["1번호","제목","작성자","작성일","조회수"];
+        let idx2 = ["","시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!","seunghee","2020-12-23","777"];
 
+        tr = document.createElement('tr');
+        for ( let i = 0; i <5; i++ ) {
+            txt = document.createTextNode(idx1[i]);
+            th = document.createElement('th');
+            th.appendChild(txt);
+            tr.appendChild(th);
+        }
+        tbody.appendChild(tr);
+
+        tr = document.createElement('tr');
+        for ( let i = 0; i < 5; i++ ) {
+            txt = document.createTextNode(idx2[i]);
+            td = document.createElement('td');
+            td.appendChild(txt);
+            tr.appendChild(td)
+        }
+        tbody.appendChild(tr);
+
+        table.appendChild(tbody);
+    </script>
+
+    <h2>동적으로 테이블 생성하기</h2>
+    <table id="table2">
+        <colgroup>
+            <col  style="width:10%">
+            <col>
+            <col  style="width:15%">
+            <col  style="width:15%">
+            <col  style="width:10%">
+        </colgroup>
+    </table>
+    <script>
+        let table = document.getElementById('table1')
+        let tbody = document.createElement('tbody');
+        let tr = null;
+        let th = null;
+        let td = null;
+        let txt = null;
+        let idx = [["2번호","제목","작성자","작성일","조회수"],
+            ["","시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!","seunghee","2020-12-23","777"]];
+
+        for ( let j = 0; j < 2; j++ ) {
             tr = document.createElement('tr');
             for ( let i = 0; i <5; i++ ) {
-                txt = document.createTextNode(idx1[i]);
-                th.appendChild(txt);
-                tr.appendChild(th);
-            }
-            tbody.appendChild(tr);
-
-            tr = document.createElement('tr');
-            for ( let i = 0; i < 5; i++ ) {
-                txt = document.createTextNode(idx2[i]);
-                td.appendChild(txt);
-                tr.appendChild(td)
-            }
-            tbody.appendChild(tr);
-
-            table.appendChild(tbody);
-        </script>
-        <hr>
-        <script>
-            let table = document.getElementById('table')
-            let tbody = document.createElement('tbody');
-            let tr = document.createElement('tr');
-            let th = document.createElement('th');
-            let td = document.createElement('td');
-            let txt = null;
-            let idx = [["번호", "제목", "작성자", "작성일", "조회수"],
-                       ["", "시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구!", "seunghee", "2020-12-23", "777"]];
-
-            for (let j = 0; j < 2; j++) {
-                tr = document.createElement('tr');
-                for (let i = 0; i < 5; i++) {
-                    txt = document.createTextNode(idx[j][i]);
-                }
-                if (j = 0) {
+                txt = document.createTextNode(idx[j][i]);
+                if ( j = 0 ) {
+                    th = document.createElement('th');
                     th.appendChild(txt);
                     tr.appendChild(th);
                 }
-                if (j = 1) {
+                if ( j = 1 ) {
+                    td = document.createElement('td');
                     td.appendChild(txt);
                     tr.appendChild(td);
                 }
-                tbody.appendChild(tr);
             }
-            table.appendChild(tbody);
-        </script>
+            tbody.appendChild(tr);
 
-    </table>
+        }
+        table.appendChild(tbody);
+    </script>
 </body>
 </html>
