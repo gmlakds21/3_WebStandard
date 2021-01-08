@@ -5,124 +5,119 @@
     <title>List_Tag</title>
 </head>
 <body>
+    <h1>목록 List</h1>
+    <!--
+    여러 요소들을 일렬로 나열한 목록이나 명단을 의미
+    HTML 에서는 ul, ol, dl 이라는 태그로 시작하고 li 태그로 목록의 요소로 표현함
+    목록의 요소 앞에는 marker 라고 하는 특수한 기호가 같이 출력됨
+    -->
+
+    <h2>ul : 순서 없는 목록 (unordered list)</h2>
+    <!--
+    marker 유형은 disc, square, circle 등이 있고
+    CSS 를 이용하면 이것 이외의 이미지를 marker 로 사용할 수 있다.
+    -->
+    <h4> 내가 좋아하는 음식 </h4>
+    <ul>
+        <li>치킨</li>
+        <li>피자</li>
+        <li>햄버거</li>
+        <li>떡볶이</li>
+        <li>만두</li>
+    </ul>
+
+    <h4> 내가 좋아하는 음식 </h4>
+    <ul type = "square">
+        <li>치킨</li>
+        <li>피자</li>
+        <li>햄버거</li>
+        <li>떡볶이</li>
+        <li>만두</li>
+    </ul>
+
+    <h4> 내가 좋아하는 음식 </h4>
+    <ul type = "circle">
+        <li>치킨</li>
+        <li>피자</li>
+        <li>햄버거</li>
+        <li>떡볶이</li>
+        <li>만두</li>
+    </ul>
+
+    <h4> 내가 좋아하는 음식 </h4>
+    <ul>
+        <li>분식
+            <ul>
+                <li>라면</li>
+                <li>김밥</li>
+                <li>떡볶이</li>
+            </ul>
+        </li>
+        <li> 치킨 </li>
+        <li> 피자 </li>
+        <li> 햄버거 </li>
+    </ul>
+    <hr>
 
 
-<h4> 내가 좋아하는 음식 </h4>
-<ul>
-    <li>치킨</li>
-    <li>피자</li>
-    <li>햄버거</li>
-    <li>떡볶이</li>
-    <li>만두</li>
-</ul>
+    <h2>ol : 순서 있는 목록 (ordered list)</h2>
+    <!-- marker 유형은 숫자, 로마자(I,i), 알파뱃(A,a) 등이 있다. -->
+    <h4> 내가 좋아하는 음식 </h4>
+    <ol>
+        <li>치킨</li>
+        <li>피자</li>
+        <li>햄버거</li>
+        <li>떡볶이</li>
+        <li>만두</li>
+    </ol>
 
-<h4> 내가 좋아하는 음식 </h4>
-<ul type = "square">
-    <li>치킨</li>
-    <li>피자</li>
-    <li>햄버거</li>
-    <li>떡볶이</li>
-    <li>만두</li>
-</ul>
+    <h4> 내가 좋아하는 음식 </h4>
+    <ol type = "A">
+        <li>치킨</li>
+        <li>피자</li>
+        <li>햄버거</li>
+        <li>떡볶이</li>
+        <li>만두</li>
+    </ol>
 
-<h4> 내가 좋아하는 음식 </h4>
-<ul type = "circle">
-    <li>치킨</li>
-    <li>피자</li>
-    <li>햄버거</li>
-    <li>떡볶이</li>
-    <li>만두</li>
-</ul>
+    <h4> 내가 좋아하는 음식 </h4>
+    <ol type = "I">
+        <li>치킨</li>
+        <li>피자</li>
+        <li>햄버거</li>
+        <li>떡볶이</li>
+        <li>만두</li>
+    </ol>
 
-<h4> 내가 좋아하는 음식 </h4>
-<ul>
-    <li>분식
-        <ul>
-            <li>라면</li>
-            <li>김밥</li>
-            <li>떡볶이</li>
-        </ul>
-    </li>
-    <li> 치킨 </li>
-    <li> 피자 </li>
-    <li> 햄버거 </li>
-</ul>
-
-<hr>
-
-<h4> 내가 좋아하는 음식 </h4>
-<ol>
-    <li>치킨</li>
-    <li>피자</li>
-    <li>햄버거</li>
-    <li>떡볶이</li>
-    <li>만두</li>
-</ol>
-
-<h4> 내가 좋아하는 음식 </h4>
-<ol type = "A">
-    <li>치킨</li>
-    <li>피자</li>
-    <li>햄버거</li>
-    <li>떡볶이</li>
-    <li>만두</li>
-</ol>
-
-<h4> 내가 좋아하는 음식 </h4>
-<ol type = "I">
-    <li>치킨</li>
-    <li>피자</li>
-    <li>햄버거</li>
-    <li>떡볶이</li>
-    <li>만두</li>
-</ol>
-
-<h4> 내가 좋아하는 음식 </h4>
-<ol>
-    <li>분식
-        <ol>
-            <li>라면</li>
-            <li>김밥</li>
-            <li>떡볶이</li>
-        </ol>
-    </li>
-    <li> 치킨 </li>
-    <li> 피자 </li>
-    <li> 햄버거 </li>
-</ol>
-
-<hr>
-<h4> 내가 좋아하는 음식 </h4>
-<dl>
-    <dt>WWW</dt>
-    <dd>WWW 는 World Wide Web 의 약자로...</dd>
-
-    <dt>HTML</dt>
-    <dd>HTML 은 Hyper Text Markup Language 의 약자로...</dd>
-
-    <dt>CSS</dt>
-    <dd>CSS 는 Cascade Style Sheet 의 약자로...</dd>
-</dl>
-
-<!--
-목록 List
-여러 요소들을 일렬로 나열한 목록이나 명단을 의미
-HTML 에서는 ul, ol, dl 이라는 태그로 시작하고 li 태그로 목록의 요소로 표현함
-목록의 요소 앞에는 marker 라고 하는 특수한 기호가 같이 출력됨
-
-ul : 순서 없는 목록 (unordered list)
-marker 유형은 disc, square, circle 등이 있고
-CSS 를 이용하면 이것 이외의 이미지를 marker 로 사용할 수 있다.
-
-ol : 순서 있는 목록 (ordered list)
-marker 유형은 숫자, 로마자(I,i), 알파뱃(A,a) 등이 있다.
-
-dl : 정의 목록 (definition list)
-정의 목록은 dl 태그로, 용어는 dt 태그로, 용어뜻은 dd 태그를 사용함
+    <h4> 내가 좋아하는 음식 </h4>
+    <ol>
+        <li>분식
+            <ol>
+                <li>라면</li>
+                <li>김밥</li>
+                <li>떡볶이</li>
+            </ol>
+        </li>
+        <li> 치킨 </li>
+        <li> 피자 </li>
+        <li> 햄버거 </li>
+    </ol>
+    <hr>
 
 
+    <h2>dl : 정의 목록 (definition list)</h2>
+    <!-- 정의 목록은 dl 태그로, 용어는 dt 태그로, 용어뜻은 dd 태그를 사용함 -->
+    <h4> 내가 좋아하는 음식 </h4>
+    <dl>
+        <dt>WWW</dt>
+        <dd>WWW 는 World Wide Web 의 약자로...</dd>
 
+        <dt>HTML</dt>
+        <dd>HTML 은 Hyper Text Markup Language 의 약자로...</dd>
 
--->
+        <dt>CSS</dt>
+        <dd>CSS 는 Cascade Style Sheet 의 약자로...</dd>
+    </dl>
+
 </body>
 </html>

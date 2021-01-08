@@ -12,7 +12,7 @@
 
     screen.width
     screen.height
-    BOM에서 살짝 다룸
+    BOM 에서 살짝 다룸
     -->
 
 
@@ -31,26 +31,33 @@
     </div>
 
     <script>
-        let url = location.href;
+        {
+            let url = location.href;
 
-        document.write('문서 url : '+location.href+'<br>');
-        document.write('url의 호스트 : '+location.hostname+'<br>');
-        document.write('url의 파일경로 : '+location.pathname+'<br>');
+            document.write('문서 url : ' + location.href + '<br>');
+            document.write('url의 호스트 : ' + location.hostname + '<br>');
+            document.write('url의 파일경로 : ' + location.pathname + '<br>');
+        }
     </script>
 
     <script>
-        let gbtn = document.getElementById('gbtn');
-        let nbtn = document.getElementById('nbtn');
-        let dbtn = document.getElementById('dbtn');
+        {
+            let gbtn = document.getElementById('gbtn');
+            let nbtn = document.getElementById('nbtn');
+            let dbtn = document.getElementById('dbtn');
 
-        gbtn.addEventListener('click', function()
-        {location.href="http://google.co.kr";} );
+            gbtn.addEventListener('click', function () {
+                location.href = "http://google.co.kr";
+            });
 
-        nbtn.addEventListener('click', function()
-        {location.href="http://naver.com";} );
+            nbtn.addEventListener('click', function () {
+                location.href = "http://naver.com";
+            });
 
-        dbtn.addEventListener('click', function()
-        {location.href="http://dawm.net";} );
+            dbtn.addEventListener('click', function () {
+                location.href = "http://dawm.net";
+            });
+        }
     </script>
 
 
@@ -65,23 +72,52 @@
         userAgent   : 브라우저의 전체 정보
     -->
     <script>
-        let appname = navigator.appName;
-        let appcode = navigator.appCodeName;
-        let appver = navigator.appVersion;
-        let ua = navigator.platform;
-        let os = navigator.userAgent;
+        {
+            let appname = navigator.appName;
+            let appcode = navigator.appCodeName;
+            let appver = navigator.appVersion;
+            let ua = navigator.userAgent;
+            let os = navigator.platform;
 
-        document.write(appname+'<br>');
-        document.write(appcode+'<br>');
-        document.write(appver+'<br>');
-        document.write(ua+'<br>');
-        document.write(os+'<br>');
+            document.write(appname + '<br>');
+            document.write(appcode + '<br>');
+            document.write(appver + '<br>');
+            document.write(ua + '<br>');
+            document.write(os + '<br>');
+        }
+    </script>
 
-        // 사용자 브라우저에 따라 인사말을 다르게 출력
-        // IE : IE를 사용중
-        // FF : FF를 사용중
-        // CR : CR를 사용중
-        // EG : EG를 사용중중
+    <h2>연습</h2>
+        <!--
+            사용자 브라우저에 따라 인사말을 다르게 출력
+            IE : IE를 사용중 - trident
+            FF : FF를 사용중 - Firefox
+            CR : CR를 사용중 - Chrome
+            EG : EG를 사용중 - Edge
+        -->
+    <script>
+        {
+            let ua = navigator.userAgent;
+            let codenames = ['Trident', 'Firefox', 'Chrome', 'Edge'];
+
+            // 일반적 출력
+            let msg = ['당신은 IE를 사용중이군요', '당신은 FF를 사용중이군요', '당신은 CR를 사용중이군요', '당신은 EG를 사용중이군요,'];
+            for (let i = 0; i < codenames.length; i++) {
+                if (ua.indexOf(codenames[i]) >= 0) {
+                    document.write(msg[i] + '<br><br>');
+
+                }
+            }
+
+            // String.format 형 출력
+            let target = ['IE', 'FF', 'CR', 'EG'];
+            for (let i = 0; i < codenames.length; i++) {
+                if (ua.indexOf(codenames[i]) >= 0) {
+                    let result = `당신은 ${target[i]}을 사용중이군요`;
+                    document.write(result)
+                }
+            }
+        }
     </script>
 </body>
 </html>

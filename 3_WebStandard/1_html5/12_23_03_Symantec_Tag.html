@@ -6,12 +6,16 @@
 </head>
 <body>
 
+<h1>html 태그의 유형</h1>
 <!--
-html 태그의 유형
 html 의 모든 태그는 해당 요소가 브라우저에서 어떻게 보이는가를 결정하는
 display 라는 속성을 지니고 있음
 display 라는 속성 탓에 html 태그는 시각적으로 2가지 형태중 하나로 보여짐
+-->
 
+
+<h2> 블럭과 인라인 태그 </h2>
+<!--
 block : 언제나 새로운 행에 배치되며 너비는 자동으로 100%임
         <p>, <h>, <hr>, <ul>, <ol>, <div>, <form> 등이 대표적 block 태그
 
@@ -19,8 +23,6 @@ inline : 너비는 태그의 내용에 따라 가변으로 설정됨
         따라서, 새로운 요소 추가시 기존 요소 뒤에 배치될 수 있음
         <b>, <strong>, <sub>, <em>, <marker>, <a>, <img>, <span> 등이 대표적 inline 태그
 -->
-
-<h2> 블럭과 인라인 태그 </h2>
 <p> 이글이 보이나요? </p>
 <p style="border:1px solid red"> 이글도 보이나요? </p>
 <p style="border:1px solid blue"> 이글도 보이나요? </p>
@@ -28,18 +30,17 @@ inline : 너비는 태그의 내용에 따라 가변으로 설정됨
 <a href ="#" style="border:1px solid red">네이버로 이동</a>
 <a href ="#" style="border:1px solid green">다음으로 이동</a>
 <a href ="#" style="border:1px solid blue">구글로 이동</a>
+<hr>
 
 
+<h2> 그룹핑 태그 : div, span </h2>
 <!--
-태그 그룹핑 태그 : div, span
 다른 HTML 요소들을 하나로 묶는데 사용하는 태그
 블록태그들을 하나로 묶을 때는 div 태그를
 인라인태그를 하나로 묶을 때는 span 태그를 사용함
 그룹핑 하는 이유는 여러 요소에 동일한 스타일을 적용하기 위해서 임
 또는 여러 요소들을 화면 특정 위치에 배치하기 위해 사용함
 -->
-
-<h2> 그룹핑 태그 </h2>
 <div>
     <h1 style = "text-align: center"> WWW </h1>
     <p style = "text-align: center"> World Wide Web 을 의미하는 약자로서 ... </p>
@@ -50,12 +51,15 @@ inline : 너비는 태그의 내용에 따라 가변으로 설정됨
     <p> World Wide Web 을 의미하는 약자로서 ... </p>
 </div>
 
+<span style ="background-color: yellow">
+    <img src="../image/free-icon-man-3930551.png" width="200px", height="200px"> <br>
+    <img src="../image/free-icon-llama-3930415.png" width="200px", height="200px">
+</span>
 <hr>
 
-<span style ="background-color: yellow">
-    <img src="../image/free-icon-man-3930551.png">
-    <img src="../image/free-icon-llama-3930415.png">
-</span>
+
+
+
 
 <!--
 레이아웃 layout

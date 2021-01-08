@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+<body>
+    <h1>Ajax</h1>
+    <!--
+        Asynchronous Javascript and XML
+        HTTP 프로토콜을 이용해서 비동기방식으로 데이터를 주고받는 기법을 의미
+        HTTP 프로토콜은 기본적으로 동기방식의 데이터 교환만을 지원했었는데
+        1993년 MS의 Microsoft.XMLHttp 라는 컴퍼넌트 덕택에
+        비동기 처리기술이 활성화됨
+
+        2000년 12월, FF 가 XMLHttpRequest 라는 이름으로 지원
+        그 이후 2004년 4월, CR 이 구글맵을 통해 Ajax 기술 지원
+
+        동기 vs 비동기(개별적으로)
+        동기 : 모든 작업은 개별 작업의 처리시간에 맞춰 실행되는 방식
+            FIFO : 먼저 요청한 작업이 처리됨, 처리 시간이 길어지면
+            나머지 작업들은 끝날때 까지 기다려야함함
+
+            설계가 간단하고 직관적
+            결과가 나올때까지 아무것도 못하고 계속 대기해야 함
+            ex) 명절 기차표 예매, 은행 송금
+
+        비동기 : 모든 작업은 개별 처리시간과 상관없이 다발적으로 실행되는 방식
+            먼저 요청한 작업이 먼저 끝난다고 보장하지 않음
+            처리시간이 길어질 것 같으면 다른 작업을 우선적으로 실행할 수 있음
+
+            설계가 복잡
+            각 개체가 개별적으로 시간을 사용
+            ex) 마트 물건 계산
+
+        CORS : cross-origin resource sharing
+            보안상의 이유로 스크립트내에서 실행중인 호스트와 다른
+            호스트를 비동기방식으로 불러오지 못하게 제한하는 기법
+   -->
+
+
+    <h2>Ajax 구현</h2>
+    <p>ajax 통신결과 <span id = "msg1"></span></p>
+    <script>
+        // 1. XMLHttpRequest 객체 초기화
+        // 2. 서버에 비동기 요청 보냄
+        // 3. 서버에서 응답이 오면 처리함
+
+        let msg = document.getElementById('msg1');
+
+        // XMLHttpRequest 객체 초기화
+        let req = new XMLHttpRequest();
+
+        // 서버의 응답에 따라 처리할 절차를 콜백함수로 정의함
+        // 마치 이벤트 함수와 비슷하게 작용
+        // readystatechange : 서버에서의 응답여부 확인 이벤트 속성
+        // readystate : 서버응답 속성
+        //  0 : 초기화 되지 않음
+        //  1 : 서버와 연결 성공
+        //  2 : 서버와 요청 수락
+        //  3 : 서버가 요청처리중
+        //  4 : 서버가 요청처리완료 & 곧 응답예정
+        // status : HTTP 상태코드 - 요청 성공 여부 확인
+        //  200 : 처리 완료, 응답 잘 받음
+        //  404 : 처리 실패, 요청 데이터가 존재하지 않을 경우
+        //  500 : 처리 실패, 서버상 코드의 오류
+        // responseText - 넘어온 응답을 어떤 형식으로 받을 것인지
+
+        req.onreadystatechange = function () {
+            if (req.readyState == 4) { // 서버가 보낼 응답수취 여부
+                if (req.status == 200) { // 처리 성공 여부
+                    msg.innerHTML = req.responseText;
+                } else {
+                    msg.innerHTML = req.status;
+                }
+            } else {
+                msg.innerHTML = req.readyState;
+            }
+        };
+
+        // 비동기방식 요청을 생성한 후 서버로 보냄
+        // open(요청방식, url, 비동기여부)
+        req.open('get', '01_07_04_hello.txt', true);
+        req.send();
+    </script>
+
+
+    <h2>버튼방식으로 구현</h2>
+    <p>ajax 통신결과 <span id = "msg2"></span></p>
+    <div><button type="button" id="saybtn">인사말하기</button></div>
+    <script>
+        let saybtn = document.getElementById('saybtn');
+        saybtn.addEventListener('click', sayHello);
+
+        function sayHello() {
+            let msg = document.getElementById('msg2');
+            let req = new XMLHttpRequest();
+
+            req.onreadystatechange = function () {
+                if (req.readyState == 4) {
+                    if (req.status == 200) {
+                        msg.innerHTML = req.responseText;
+                    } else {
+                        msg.innerHTML = req.status;
+                    }
+                } else {
+                    msg.innerHTML = req.readyState;
+                }
+            };
+
+            req.open('get', '01_07_04_hello.txt', true);
+            req.send();
+        }
+    </script>
+
+</body>
+</html>
