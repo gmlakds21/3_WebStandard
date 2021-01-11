@@ -4,106 +4,107 @@
     <meta charset="UTF-8">
     <title>HTML5</title>
 </head>
-<!--
-자바 스크립트 javascript
-1995년 넷 스케이프사에서 브랜든 아이크가 개발한 동적 웹페이지 생성용 프로그래밍 언어
-1996년 넷스케이프사의 자바스크립트에 대항해서 마이크로소프트의 JScript 가 발표
-이후 javascript 와 JScript 의 파편화로 표준화된 자바 스크립트의 필요성에 의해
-1997년 ECMA-262라 불리는 표준화된 ECMAScript 라는 이름의 자바스크립트가 발표
-2018년 기준, ECMAScript 2018 (ES9)이 발표
-하지만, 2015년애 발표된 EMCAScript 2015 (ES6)을 더 많이 사용
+    <h1>자바 스크립트 javascript</h1>
+    <!--
+    1995년 넷 스케이프사에서 브랜든 아이크가 개발한 동적 웹페이지 생성용 프로그래밍 언어
+    1996년 넷스케이프사의 자바스크립트에 대항해서 마이크로소프트의 JScript 가 발표
+    이후 javascript 와 JScript 의 파편화로 표준화된 자바 스크립트의 필요성에 의해
+    1997년 ECMA-262라 불리는 표준화된 ECMAScript 라는 이름의 자바스크립트가 발표
+    2018년 기준, ECMAScript 2018 (ES9)이 발표
+    하지만, 2015년애 발표된 EMCAScript 2015 (ES6)을 더 많이 사용
 
-자바스크립트 = ECMA-262(자바스크립트 표준)
-           + 브라우저가 지원하는 WebAPI (DOM, BOM, XMLHttpRequest...)
-웹 브라우져에서만 실행되는 인터프리터 언어
-C언어 스타일의 명령형과 함수기반 객체 지향 프로그래밍을 지원하는
-멀티 패러다임 프로그램 언어
+    자바스크립트 = ECMA-262(자바스크립트 표준)
+               + 브라우저가 지원하는 WebAPI (DOM, BOM, XMLHttpRequest...)
+    웹 브라우져에서만 실행되는 인터프리터 언어
+    C언어 스타일의 명령형과 함수기반 객체 지향 프로그래밍을 지원하는
+    멀티 패러다임 프로그램 언어
 
-TypeScript
-마이크로 소프트에서 개발한 정적 자바스크립트
+    TypeScript
+    마이크로 소프트에서 개발한 정적 자바스크립트
 
-Stackoverflow developer survey 2020
-개발자들의 상황을 알 수 있는 홈페이지
--->
-
-
-
-<!--
-자바 스크립트 실행 방법
-1. head 에 script 태그 정의후 실행
-2. body 에 script 태그 정의후 실행 (추천!)
-3. 요소에 스크립트 정의후 이벤트 발동시 스크립트 실행
--->
-<head>
-    <script>
-        alert('Hello, World #1');
-    </script>
-</head>
-<body>
-    <h1>자바스크립트 개요</h1>
-    <button type="button" onclick="alert('Hello, World #3')">여기를 눌러보세요!</button>
-    <script>
-        alert('Hello, World #2');
-    </script>
-</body>
+    Stackoverflow developer survey 2020
+    개발자들의 상황을 알 수 있는 홈페이지
+    -->
 
 
 
-<!--
-자바스크립트 문법
-C 언어나 자바와 유사함
-
-문장의 끝은; (생략 가능)
-주석은 //, /* */ 사용
-문자열 리터럴(값) : "", ''
-식별자 정의시 영문자, 숫자, _, $만 사용
-식별자 정의시 camel 표기법(loveYou), underscore 표기법(love_you) 사용
-식별자 정의시 타입 명시를 동적으로 사용할 수 있음 (var 키워드 사용, 요즘은 let 사용)
-=> 타입 추론 type inference
-자바스크립트 예약어
--->
-<body>
-    <script>
-        var name = '혜교';
-        kor = 99;
-        let eng = 98;
-        let mat = 99;
-
-        tot = kor + eng + mat;
-        avg = tot/3;
+    <h2>자바 스크립트 실행 방법</h2>
+    <!--
+    1. head 에 script 태그 정의후 실행
+    2. body 에 script 태그 정의후 실행 (추천!)
+    3. 요소에 스크립트 정의후 이벤트 발동시 스크립트 실행
+    -->
+    <head>
+        <script>
+            alert('Hello, World #1');
+        </script>
+    </head>
+    <body>
+        <h1>자바스크립트 개요</h1>
+        <button type="button" onclick="alert('Hello, World #3')">여기를 눌러보세요!</button>
+        <script>
+            alert('Hello, World #2');
+        </script>
+        <hr>
+    </body>
 
 
-        document.write("<p>");
-        document.write(name+"<br>");
-        document.write(kor+"<br>");
-        document.write(eng+"<br>");
-        document.write(mat+"<br>");
-        document.write(tot+"<br>");
-        document.write(avg+"<br>");
-    </script>
-</body>
+    <h2>자바스크립트 문법</h2>
+    <!--
+    C 언어나 자바와 유사함
+
+    문장의 끝은; (생략 가능)
+    주석은 //, /* */ 사용
+    문자열 리터럴(값) : "", ''
+    식별자 정의시 영문자, 숫자, _, $만 사용
+    식별자 정의시 camel 표기법(loveYou), underscore 표기법(love_you) 사용
+    식별자 정의시 타입 명시를 동적으로 사용할 수 있음 (var 키워드 사용, 요즘은 let 사용)
+    => 타입 추론 type inference
+    자바스크립트 예약어
+    -->
+    <body>
+        <script>
+            var name = '혜교';
+            kor = 99;
+            let eng = 98;
+            let mat = 99;
+
+            tot = kor + eng + mat;
+            avg = tot/3;
+
+
+            document.write("<p>");
+            document.write(name+"<br>");
+            document.write(kor+"<br>");
+            document.write(eng+"<br>");
+            document.write(mat+"<br>");
+            document.write(tot+"<br>");
+            document.write(avg+"<br>");
+        </script>
+        <hr>
+    </body>
 
 
 
-<!--
-자바스크립트 출력문
-alert (출력할 내용);             - 경고 대화상자에 출력 (비추)
-document.write (출력할 내용);    - 브라우져 내 출력
-요소명.innerHTML (출력할 내용);   - 문서내 특정요소에 출력
-console.log (출력할 내용);       - 브라우져내 콘솔창에 출력, 브라우저 실행후 Ctrl+Shift+I
+    <h2>자바스크립트 출력문</h2>
+    <h3> </h3>
+    <!--
+    alert (출력할 내용);             - 경고 대화상자에 출력 (비추)
+    document.write (출력할 내용);    - 브라우져 내 출력
+    요소명.innerHTML (출력할 내용);   - 문서내 특정요소에 출력
+    console.log (출력할 내용);       - 브라우져내 콘솔창에 출력, 브라우저 실행후 Ctrl+Shift+I
 
-자바스크립트 디버깅
-브라우저의 개발자 도구(Ctrl+Shift+I)내 console 을 이용
--->
-<body>
-    <script>
-        console.log(name);
-        console.log(tot);
+    자바스크립트 디버깅
+    브라우저의 개발자 도구(Ctrl+Shift+I)내 console 을 이용
+    -->
+    <body>
+        <script>
+            console.log(name);
+            console.log(tot);
 
-        let h1 = document.getElementsByTagName('H1')
-        h1[0].innerHTML = name + "/" + tot;
-    </script>
-</body>
-
-
+            let h3 = document.getElementsByTagName('h3')
+            h3[0].innerHTML = name + "/" + tot;
+        </script>
+        <hr>
+    </body>
 </html>

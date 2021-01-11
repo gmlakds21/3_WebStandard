@@ -6,8 +6,8 @@
 </head>
 <body>
     <h2>조건문 : if</h2>
+    <!-- 조건문 : 주어진 식의 결과에 따라 별도의 명령을 수행 (분기문) -->
     <script>
-        // 조건문 : 주어진 식의 결과에 따라 별도의 명령을 수행 (분기문)
         // 성적 처리 프로그램
 
         // 1. 변수 선언
@@ -38,10 +38,12 @@
         document.write('평균 : '+avg.toFixed(2)+'<br>');
         document.write('학점 : '+grd+'<br>');
     </script>
+    <hr>
+
 
     <h2>다중 조건문 : switch</h2>
+    <!-- 조건이 많은 경우 if 문보다 switch 문을 추천 -->
     <script>
-        // 조건이 많은 경우 if 문보다 switch 문을 추천
         switch ( Math.round(avg/10) ) {
             case 10 :
             case 9 : grd = '수'; break;
@@ -53,6 +55,8 @@
         }
         document.write(grd+'<br>');
     </script>
+    <hr>
+
 
     <h2>연습</h2>
     <script>

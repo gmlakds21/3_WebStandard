@@ -59,17 +59,18 @@
             });
         }
     </script>
+    <hr>
 
 
     <h2>Navigator 객체</h2>
     <!--
-        웹페이지를 실행하는 브라우저의 정보를 알 수 있음
-        즉, 운영체제 종류나 브라우저 유형을 볼 수 있음
-        appCodeName : 브라우저 코드네임
-        appName     : 브라우저 이름
-        appVersion  : 브라우저 버전
-        platform    : 브라우저가 실행중인 시스템 환경
-        userAgent   : 브라우저의 전체 정보
+    웹페이지를 실행하는 브라우저의 정보를 알 수 있음
+    즉, 운영체제 종류나 브라우저 유형을 볼 수 있음
+    appCodeName : 브라우저 코드네임
+    appName     : 브라우저 이름
+    appVersion  : 브라우저 버전
+    platform    : 브라우저가 실행중인 시스템 환경
+    userAgent   : 브라우저의 전체 정보
     -->
     <script>
         {
@@ -86,15 +87,17 @@
             document.write(os + '<br>');
         }
     </script>
+    <hr>
+
 
     <h2>연습</h2>
-        <!--
-            사용자 브라우저에 따라 인사말을 다르게 출력
-            IE : IE를 사용중 - trident
-            FF : FF를 사용중 - Firefox
-            CR : CR를 사용중 - Chrome
-            EG : EG를 사용중 - Edge
-        -->
+    <!--
+    사용자 브라우저에 따라 인사말을 다르게 출력
+    IE : IE를 사용중 - trident
+    FF : FF를 사용중 - Firefox
+    CR : CR를 사용중 - Chrome
+    EG : EG를 사용중 - Edge
+    -->
     <script>
         {
             let ua = navigator.userAgent;

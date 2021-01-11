@@ -25,12 +25,12 @@
     따라서, 동일한 서버에서 실행되어야 CORS 로 인한 제한이 해소됨
     => Ajax2.html 과 sido.jsp 를 동일한 서버에 업로드할 것!
     -->
+
+
     <h2>주소 데이터 연습</h2>
     <div>
         <select id ="sido"></select>
-
         <select id ="gugun"></select>
-
         <select id ="dong"></select>
     </div>
     <p id = "addr"></p>
@@ -43,7 +43,7 @@
         let sido = document.getElementById('sido');
         let gugun = document.getElementById('gugun');
         let dong = document.getElementById('dong');
-        let addr = document.getElementById('addr')
+        // let addr = document.getElementById('addr')
 
         getsido();
         sido.addEventListener('change', getgugun);
@@ -121,7 +121,7 @@
                     makedong(req.responseText);
                 }
             }
-            let qry = '?sido='+sido.value+'\&?gugun='+gugun.value;
+            let qry = '?sido='+sido.value+'&gugun='+gugun.value;
             req.open('get', url3+qry, true)
             req.send();
         }
@@ -146,7 +146,7 @@
             }
         }
 
-
+        // 미구현
         function showaddr() {
             let ymdong = ' ';
             if (dong.value != '-읍/면/동-') ymdong = dong.value;

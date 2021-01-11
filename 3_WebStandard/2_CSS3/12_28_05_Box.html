@@ -7,156 +7,157 @@
 
 
 
-<!--
-CSS 박스 모델
-모든 HTML 요소는 박스 형태의 영역을 지니고 있음
-이러한 박스는 기본적으로
-내용 content, 안쪽 여백 padding, 테두리 border, 바깥 여백 margin 등으로 구성
+    <h2>CSS 박스 모델</h2>
+    <!--
+    모든 HTML 요소는 박스 형태의 영역을 지니고 있음
+    이러한 박스는 기본적으로
+    내용 content, 안쪽 여백 padding, 테두리 border, 바깥 여백 margin 등으로 구성
 
-브라우저는 박스의 기본크기와 속성, 위치를 기반으로 화면에 자리잡음
--->
-<head>
-    <style>
-        #div1 { width : 300px; background : darkorange;
-                padding: 25px;
-                border : 5px solid navy;
-                margin : 20px; }
-    </style>
-</head>
-<body>
-    <div id="div1">
-        로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은
-        그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트다.
-    </div>
-</body>
-<hr>
-
-
-
-<!--
-width/height 속성
-요소의 너비와 높이를 지정할 때 사용
-단, 컨텐츠 영역보다 컨텐츠가 크면 영역을 넘쳐서 표시됨
-사용가능 단위는 px, %
--->
-<head>
-    <style>
-        #div2 { width : 300px; height : 30px; background : skyblue;
-                padding: 25px;
-                border : 5px solid navy;
-                margin : 20px;
-                overflow: hidden;}
-    </style>
-</head>
-<body>
-    <div id="div2">
-        로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은
-        그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트다.
-    </div>
-</body>
-<hr>
+    브라우저는 박스의 기본크기와 속성, 위치를 기반으로 화면에 자리잡음
+    -->
+    <head>
+        <style>
+            #div1 { width : 300px; background : darkorange;
+                    padding: 25px;
+                    border : 5px solid navy;
+                    margin : 20px; }
+        </style>
+    </head>
+    <body>
+        <div id="div1">
+            로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은
+            그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트다.
+        </div>
+        <hr>
+    </body>
 
 
 
-<!--
-margin/padding 속성
-컨텐츠를 둘러싸고 있는 4개 방향(top, bottom, right, left)에 지정가능
-margin, padding 은 1개 값, 2개 값, 3개 값, 4개 값을 이용해서 지정할 수 있음
-한편, -top, -right, -bottom, -left 속성을 이용해서 세부적으로 margin 이나 padding 을 조절 할 수 있음
--->
-<head>
-    <style>
-        #div3 { width : 300px; background : yellowgreen;
-                padding: 25px;
-                /* 4방향 25 */
-                padding: 25px 20px;
-                /* 상하25, 좌우20 */
-                padding: 25px 20px 15px;
-                /* 상25 좌우20 하15 */
-                padding: 25px 20px 25px 20px;
-                /* 상25 우20 하25 좌20 */
-            
-                padding-top: 25px;
-                padding-bottom: 25px;
-                padding-right: 20px;
-                padding-left: 20px;
-
-                border : 3px solid navy;
-                margin : 20px; }
-    </style>
-</head>
-<body>
-    <div id="div3">
-        로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은
-        그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트다.
-    </div>
-</body>
-<hr>
-
-<!--
-자동 수평 정렬
-
-margin 의 left/right 속성을 auto 라고 선언하면
-해당요소를 브라우져 중앙에 배치할 수 있음
-
--->
-<head>
-    <style>
-        #div4 { width : 300px; background : yellowgreen;
-                padding: 25px;
-                border : 3px solid navy;
-                margin : 10px auto; }
-    </style>
-</head>
-<body>
-<div id="div4">
-    로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은
-    그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트다.
-</div>
-</body>
-<hr>
-
-<!--
-테두리
-border-style, border-color, border-width 등의 속성을 가짐
-padding/margin 과 마찬가지로 단축 표기식으로 선언할 수 있음
-border : 선두께 선종류 선색깔' 형태로 정의해야함
--top-style, -right-style, -bottom-style, -left-style 속성을 이용해서 세부적으로
+    <h2>width/height 속성</h2>
+    <!--
+    요소의 너비와 높이를 지정할 때 사용
+    단, 컨텐츠 영역보다 컨텐츠가 크면 영역을 넘쳐서 표시됨
+    사용가능 단위는 px, %
+    -->
+    <head>
+        <style>
+            #div2 { width : 300px; height : 30px; background : skyblue;
+                    padding: 25px;
+                    border : 5px solid navy;
+                    margin : 20px;
+                    overflow: hidden;}
+        </style>
+    </head>
+    <body>
+        <div id="div2">
+            로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은
+            그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트다.
+        </div>
+        <hr>
+    </body>
 
 
-border-style : dotted, dashed, solid, double, ...
-border-width : thin, thick, medium, 수치값, ...
--->
-<head>
-    <style>
-        #div5 { width : 300px; background : yellowgreen;
-                padding: 25px;
-                border : 3px dotted navy;
 
-                border-top-style: solid;
-                border-bottom-style: dashed;
-                border-left-style: dotted;
-                border-right-style: inset;
+    <h2>margin/padding 속성</h2>
+    <!--
+    컨텐츠를 둘러싸고 있는 4개 방향(top, bottom, right, left)에 지정가능
+    margin, padding 은 1개 값, 2개 값, 3개 값, 4개 값을 이용해서 지정할 수 있음
+    한편, -top, -right, -bottom, -left 속성을 이용해서 세부적으로 margin 이나 padding 을 조절 할 수 있음
+    -->
+    <head>
+        <style>
+            #div3 { width : 300px; background : yellowgreen;
+                    padding: 25px;
+                    /* 4방향 25 */
+                    padding: 25px 20px;
+                    /* 상하25, 좌우20 */
+                    padding: 25px 20px 15px;
+                    /* 상25 좌우20 하15 */
+                    padding: 25px 20px 25px 20px;
+                    /* 상25 우20 하25 좌20 */
 
-                border-style: solid dashed dotted inset;
+                    padding-top: 25px;
+                    padding-bottom: 25px;
+                    padding-right: 20px;
+                    padding-left: 20px;
 
-                border-bottom-color: red;
-                border-bottom-color: blue;
-                border-bottom-color: green;
-                border-bottom-color: yellow;
+                    border : 3px solid navy;
+                    margin : 20px; }
+        </style>
+    </head>
+    <body>
+        <div id="div3">
+            로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은
+            그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트다.
+        </div>
+        <hr>
+    </body>
 
-                border-color: red blue green yellow;
 
-                border-width: thin;
-                margin : 20px; }
-    </style>
-</head>
-<body>
-<div id="div5">
-    로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은
-    그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트다.
-</div>
-</body>
-<hr>
+
+    <h2>자동 수평 정렬</h2>
+    <!--
+    margin 의 left/right 속성을 auto 라고 선언하면
+    해당요소를 브라우져 중앙에 배치할 수 있음
+    -->
+    <head>
+        <style>
+            #div4 { width : 300px; background : yellowgreen;
+                    padding: 25px;
+                    border : 3px solid navy;
+                    margin : 10px auto; }
+        </style>
+    </head>
+    <body>
+        <div id="div4">
+            로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은
+            그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트다.
+        </div>
+        <hr>
+    </body>
+
+
+
+    <h2>테두리</h2>
+    <!--
+    border-style, border-color, border-width 등의 속성을 가짐
+    padding/margin 과 마찬가지로 단축 표기식으로 선언할 수 있음
+    border : 선두께 선종류 선색깔' 형태로 정의해야함
+    -top-style, -right-style, -bottom-style, -left-style 속성을 이용해서 세부적으로
+
+    border-style : dotted, dashed, solid, double, ...
+    border-width : thin, thick, medium, 수치값, ...
+    -->
+    <head>
+        <style>
+            #div5 { width : 300px; background : yellowgreen;
+                    padding: 25px;
+                    border : 3px dotted navy;
+
+                    border-top-style: solid;
+                    border-bottom-style: dashed;
+                    border-left-style: dotted;
+                    border-right-style: inset;
+
+                    border-style: solid dashed dotted inset;
+
+                    border-bottom-color: red;
+                    border-bottom-color: blue;
+                    border-bottom-color: green;
+                    border-bottom-color: yellow;
+
+                    border-color: red blue green yellow;
+
+                    border-width: thin;
+                    margin : 20px; }
+        </style>
+    </head>
+    <body>
+        <div id="div5">
+            로렘 입숨은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은
+            그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트다.
+        </div>
+        <hr>
+    </body>
 
 </html>

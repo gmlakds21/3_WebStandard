@@ -12,52 +12,52 @@
 </head>
 
 
-<!--
-Background
-해당 요소의 배경으로 이미지나 색상을 정의할 때 사용
+    <h2>Background</h2>
+    <!--
+    해당 요소의 배경으로 이미지나 색상을 정의할 때 사용
 
-background-color : 배경으로 색상 지정
-background-image : 배경으로 이미지 지정
-    background-repeat : 화면의 크기가 배경이미지보다 크면, 배경이미지가 반복적으로 출력 반복 여부를
-                        repeat-x (x축 으로만 반복)
-                        repeat-y (y축 으로만 반복)
-                        no-repeat (1회만 반복)
-    background-size : 배경이미지의 크기 설정 ( 50px 50px; ) 이런식으로 설정
-    background-position : 배경이미지 위치 설정 설정시 기준 위치는 top, left
-                          ( 100px 100px; ) 이렇게 입력하면 상단, 좌로 부터 100px씩 떨어짐
-                          ( top, bottom, left, right, center ) 로 입력시 시작 기준점을 정함
-    background-attachment : 배경이미지 고정 여부 설정
+    background-color : 배경으로 색상 지정
+    background-image : 배경으로 이미지 지정
+        background-repeat : 화면의 크기가 배경이미지보다 크면, 배경이미지가 반복적으로 출력 반복 여부를
+                            repeat-x (x축 으로만 반복)
+                            repeat-y (y축 으로만 반복)
+                            no-repeat (1회만 반복)
+        background-size : 배경이미지의 크기 설정 ( 50px 50px; ) 이런식으로 설정
+        background-position : 배경이미지 위치 설정 설정시 기준 위치는 top, left
+                              ( 100px 100px; ) 이렇게 입력하면 상단, 좌로 부터 100px씩 떨어짐
+                              ( top, bottom, left, right, center ) 로 입력시 시작 기준점을 정함
+        background-attachment : 배경이미지 고정 여부 설정
 
-배경 속성 관련 단축 표기법
-background : 색상 이미지 반복여부 고정여부 위치
-    background : 색상;
-    background : 이미지;
-    background : 이미지 반복여부 위치;
-    background : 이미지 반복여부 고정여부;
+    배경 속성 관련 단축 표기법
+    background : 색상 이미지 반복여부 고정여부 위치
+        background : 색상;
+        background : 이미지;
+        background : 이미지 반복여부 위치;
+        background : 이미지 반복여부 고정여부;
 
 
--->
-<head>
-    <style>
-        #div1 { background-color : orange; }
-        #div2 { background-image: url("../image/PS20110900045.jpg")}
-        body { background-image: url("../image/PS20110900045.jpg");
-                /*
-               background-repeat: repeat-x; x 축으로만 반복
-               background-repeat: repeat-y; y 축으로만 반복
-               background-repeat: no-repeat; 한번만 반복
-                */
-               background-size : 500px 500px;
+    -->
+    <head>
+        <style>
+            #div1 { background-color : orange; }
+            #div2 { background-image: url("../image/PS20110900045.jpg")}
+            body { background-image: url("../image/PS20110900045.jpg");
+                    /*
+                   background-repeat: repeat-x; x 축으로만 반복
+                   background-repeat: repeat-y; y 축으로만 반복
+                   background-repeat: no-repeat; 한번만 반복
+                    */
+                   background-size : 500px 500px;
 
-               background-position: 100px 100px;
+                   background-position: 100px 100px;
 
-               background-attachment: fixed;}
-    </style>
-</head>
-<body>
-    <div id="div1" class="div">주황색</div>
-    <div id="div2" class="div">민트초코</div>
-</body>
+                   background-attachment: fixed;}
+        </style>
+    </head>
+    <body>
+        <div id="div1" class="div">주황색</div>
+        <div id="div2" class="div">민트초코</div>
+    </body>
 
 
 </html>

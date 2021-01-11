@@ -6,11 +6,10 @@
 </head>
 
 
-<!--
-자바스크립트 타입
-크게 3가지 타입 지원 : 숫자, 문자형, 논리형
+<h1>자바스크립트 타입</h1>
+<!-- 크게 3가지 타입 지원 : 숫자, 문자형, 논리형 -->
 
--->
+
 <body>
     <h2>숫자형, 문자형, 논리형</h2>
     <script>
@@ -36,24 +35,32 @@
         document.write(bool1, '<br>');
         document.write('<br>');
     </script>
+    <hr>
+
 
     <h2>객체형</h2>
+    <!--
+    단일변수에 여러 타입의 값을 저장한 것
+    객체를 구성하는 변수들은 property 라 하고
+    함수들은 method 라고 함
+    객체의 속성이나 함수에 접근하려면 객체명.속성명, 객체명.함수명을 사용
+    -->
     <script>
-        /* 단일변수에 여러 타입의 값을 저장한 것
-           객체를 구성하는 변수들은 property 라 하고
-           함수들은 method 라고 함
-           객체의 속성이나 함수에 접근하려면 객체명.속성명, 객체명.함수명을 사용 */
         let person = { name:'혜교', kor: 99, eng: 94, mat:98 };
 
         document.write(person.name+'<br>');
         document.write(person.kor+'/'+person.eng+'/'+person.mat+'<br>');
         document.write('<br>')
     </script>
+    <hr>
+
 
     <h2>null 과 undefined</h2>
+    <!--
+    변수 선언시 초기화 하지 않으면 null 형으로 정의
+    초기화되지 않은 변수를 호출/사용하면 undefined 로 출력
+    -->
     <script>
-        /* 변수 선언시 초기화 하지 않으면 null 형으로 정의
-           초기화되지 않은 변수를 호출/사용하면 undefined 로 출력 */
         let data;
         document.write(data+'<br>')
         document.write('<br>')
@@ -77,6 +84,8 @@
         // NaN (Not a Number)로 출력
         document.write('<br>')
     </script>
+    <hr>
+
 
     <h2>명시적 형변환</h2>
     <script>
@@ -96,19 +105,20 @@
         document.write(parseInt('총3500원'),'<br>');
         document.write('<br>')
     </script>
+    <hr>
+
 
     <h2>연산자</h2>
+    <!--
+    자바스크립트 연산자
+    산술 연산자 : + - * / %
+    대입 연산자 : = += -= *= /= %=
+    중감 연산자 : ++A A++ --A A--
+    비교 연산자 : == != > >= < <= (값과 타입의 동질성여부 ===, !==)
+    논리 연산자 : && || !
+    기타 연산자 : + (문자열 결합), ? : (3항 연산자), typeof (변수의 타입을 출력)
+    -->
     <script>
-        /*
-            자바스크립트 연산자
-            산술 연산자 : + - * / %
-            대입 연산자 : = += -= *= /= %=
-            중감 연산자 : ++A A++ --A A--
-            비교 연산자 : == != > >= < <= (값과 타입의 동질성여부 ===, !==)
-            논리 연산자 : && || !
-            기타 연산자 : + (문자열 결합), ? : (3항 연산자), typeof (변수의 타입을 출력)
-         */
-
         // 증감 연산자
         let x = 10, y = 10;
         document.write((++x + 3)+'<br>');

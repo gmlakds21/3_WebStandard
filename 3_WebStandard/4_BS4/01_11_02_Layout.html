@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- 변경 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>Hello, world!</title>
+</head>
+
+
+    <h1>레이아웃</h1>
+    <!--
+    부트 스크랩
+    트위터에 근무하는 마크오토와 제이콥 손튼이 개발한 UI 라이브러리
+    모바일 환경에 적합한 반응형 웹을 쉽게 개발하고
+    디자인으로 길어지는 개발시간을 단축하기 위해 만들었음
+
+    http://getbootstrap.com (영문 - v5)
+    http://bootstrapk.com (한글 - v3)
+    http://maczniak.github.io/bootstrap (한글- v2)
+    -->
+
+    <h2>grid system</h2>
+    <!--
+    bootstrap grid system
+    grid 란 화면을 일정크기의 격자로 나눈것을 의미 부트스트랩에서는
+    이것을 토대로 웹페이지를 구성하는 요소와 컨텐츠를 배치할 수 있음
+    이 방식을 통해 데스크탑, 태블릿, 모바일 환경에 따라
+    컨텐츠 재배치가 훨씐 수월해짐
+
+    container, row, col
+    부트스트랩에서 레이아웃 관련 스타일은 container, row, col 을 사용함
+    html 에서 표를 만드는 것과 유사하게
+    table 태그는 container 클래스로, tr th 는 row 클래스로
+    td 는 col 클래스로 대응한다고 보면 됨
+    -->
+    <header>
+        <style>
+            .bg { background: #dddddd; border: 1px solid black; text-align: center }
+        </style>
+    </header>
+
+    <body>
+        <h3>기본 테이블</h3>
+        <div class="container bd">
+            <div class="row">
+                <div class="col bg">1</div>
+                <div class="col bg">1</div>
+                <div class="col bg">1</div>
+                <div class="col bg">1</div>
+                <div class="col bg">1</div>
+                <div class="col bg">1</div>
+
+                <div class="col bg">1</div>
+                <div class="col bg">1</div>
+                <div class="col bg">1</div>
+                <div class="col bg">1</div>
+                <div class="col bg">1</div>
+                <div class="col bg">1</div>
+            </div>
+        </div>
+        <hr>
+
+
+        <h3>테이블 합치기</h3>
+        <div class="container bd">
+            <div class="row">
+                <div class="col-4 bg">1</div>
+                <div class="col-4 bg">1</div>
+                <div class="col-4 bg">1</div>
+                <!-- 4개 합친 크기로 만듬 -->
+            </div>
+        </div>
+        <hr>
+
+
+        <h3>그리드 옵션</h3>
+        <!--
+        col-xs- : 매우 작은 기기 모바일 / 기본값
+        col-sm- : 작은 기기 태블릿 / 750px 보다 작아지면 반응형으로 반응하도록 설계
+        col-md- : 중간 기기 데탑 / 970px 보다 작아지면
+        col-lg- : 큰 기기 데탑 / 1170px 보다 작아지면
+
+        하지만 요즘 추세는 반응형으로 만들기 보다는, 네이버(m.naver.com) 처럼
+        아예 따로 제작하는걸 추구하는 추세다
+        -->
+        <div class="container bd">
+            <div class="row">
+                <div class="col-sm-1 bg">1</div>
+                <div class="col-sm-1 bg">1</div>
+                <div class="col-sm-1 bg">1</div>
+                <div class="col-sm-1 bg">1</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-1 bg">1</div>
+                <div class="col-md-1 bg">1</div>
+                <div class="col-md-1 bg">1</div>
+                <div class="col-md-1 bg">1</div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-1 bg">1</div>
+                <div class="col-lg-1 bg">1</div>
+                <div class="col-lg-1 bg">1</div>
+                <div class="col-lg-1 bg">1</div>
+            </div>
+        </div>
+        <hr>
+
+
+        <h3>중첩해서 셀 배치</h3>
+        <div class="row">
+            <div class="col-md-6 bg">
+                <div class="row">
+                    <div class="col-sm-6">a</div>
+                    <div class="col-sm-6">b</div>
+                </div>
+                <div class="col-md-6 bg">1</div>
+            </div>
+        </div>
+        <hr>
+
+
+        <h3>예제</h3>
+        <div class="container">
+            <header class ="row">
+                <div class="col bg">header</div>
+                <!--class="col-sm-12가 의미는 더 명확하다-->
+            </header>
+            <nav class ="row">
+                <div class="col bg">nav</div>
+            </nav>
+            <div class ="row">
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-12 bg">section1</div>
+                        <div class="col-12 bg">section2</div>
+            <!--row 를 하나 더 만드는 것보다, col-12 로 꽉채워서 줄바꿈을 더 선호함-->
+                    </div>
+                </div>
+                <aside class="col-sm-4 bg">aside</aside>
+            </div>
+            <footer class ="row">
+                <div class="col bg">footer</div>
+            </footer>
+        </div>
+
+    </body>
+<body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- 변경 -->
+</body>
+</html>
+

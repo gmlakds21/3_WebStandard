@@ -5,176 +5,165 @@
     <title>Position</title>
 </head>
 
+    <h1>position</h1>
+    <!-- 대상요소의 위치를 정의함 (top, bottom, left, right 속성과 함께 사용) -->
 
 
-<!--
-position
-대상요소의 위치를 정의함 (top, bottom, left, right 속성과 함께 사용)
--->
-
-
-
-<!--
-static : 기본 배치 방식
-         위에서 아래로 (블록 요소)
-         왼쪽에서 오른쪽 (인라인 요소)
--->
-<head>
-    <style>
-        #d11 { width:50px; height:50px;
-                background: yellow; position: static; }
-   </style>
-</head>
-<body>
-    <div id="d11"> static </div><br>
-</body>
-<hr>
+    <h2>static : 기본 배치 방식</h2>
+    <!--
+    위에서 아래로 (블록 요소)
+    왼쪽에서 오른쪽 (인라인 요소)
+    -->
+    <head>
+        <style>
+            #d11 { width:50px; height:50px;
+                    background: yellow; position: static; }
+       </style>
+    </head>
+    <body>
+        <div id="d11"> static </div><br>
+        <hr>
+    </body>
 
 
 
-<!--
-relative : 상대 좌표 배치 방식
-           static 으로 선언된 요소를 기준으로 좌표 속성을 이용해서 배치
-           relative 박스안에 무언가를 선언하게 되면 페이지 기준 좌표가 아닌
-           상위 박스의 좌표를 기준으로 위치를 잡는다.
--->
-<head>
-    <style>
-        #d21 { width:50px; height:50px;
-                background: green; position:relative;
-                top:20px; left:20px;}
-        #d22 { width:100px; height:100px;
-                background: orange; position:relative;
-                top:20px; left:20px;}
-        #d23 { width:50px; height:50px;
-                background: red; position:relative;
-                top:20px; left:30px;}
-    </style>
-</head>
-<body>
-    <div id="d21"> relative </div><br>
-    <div id="d22">
-        <div id="d23">relative2</div>
-    </div><br>
-</body>
-<hr>
-<br>
+    <h2>relative : 상대 좌표 배치 방식</h2>
+    <!--
+    static 으로 선언된 요소를 기준으로 좌표 속성을 이용해서 배치
+    relative 박스안에 무언가를 선언하게 되면 페이지 기준 좌표가 아닌
+    상위 박스의 좌표를 기준으로 위치를 잡는다.
+    -->
+    <head>
+        <style>
+            #d21 { width:50px; height:50px;
+                    background: green; position:relative;
+                    top:20px; left:20px;}
+            #d22 { width:100px; height:100px;
+                    background: orange; position:relative;
+                    top:20px; left:20px;}
+            #d23 { width:50px; height:50px;
+                    background: red; position:relative;
+                    top:20px; left:30px;}
+        </style>
+    </head>
+    <body>
+        <div id="d21"> relative </div><br>
+        <div id="d22">
+            <div id="d23">relative2</div>
+        </div><br>
+    <hr>
+    </body>
 
 
-<!--
-absolute : 절대 좌표 배치 방식
-현재 커서 위치와 상관없이 브라우저 가시영역 좌상단을 기준으로
-좌표속성을 이용해서 배치
--->
-<head>
-    <style>
-        #d31 { width:50px; height:50px;
-                background: red; position:absolute;
-                top:20px; left:30px;}
-        #d32 { width:50px; height:50px;
-                background: red; position:absolute;
-                top:20px; left:30px;}
-        #d33 { width:50px; height:50px;
-                background: yellow; position:absolute;
-                top:20px; right:30px;}
-    </style>
-</head>
-<body>
-    <div id="d31">
-        <div id="d32"> absolute </div><br>
-    </div>
-    <div id="d33"> absolute2 </div><br>
-</body>
-<hr>
-
-
-
-<!--
-fixed : 고정 좌표 배치 방식
-        브라우저 가시영역 (document body)을 기준으로
-        배치되어 스크롤을 하더라도 언제나 그 위치에 고정배치 (쇼핑몰 장바구니)
--->
-<head>
-    <style>
-        #d41 { width:50px; height:50px;
-            background: blue; position: fixed;
-            top:50px; right:50px; z-index: 50;}
-    </style>
-</head>
-<body>
-    <div id="d41">fixed</div>
-</body>
-<hr>
+    <h2>absolute : 절대 좌표 배치 방식</h2>
+    <!--
+    현재 커서 위치와 상관없이 브라우저 가시영역 좌상단을 기준으로
+    좌표속성을 이용해서 배치
+    -->
+    <head>
+        <style>
+            #d31 { width:50px; height:50px;
+                    background: red; position:absolute;
+                    top:20px; left:30px;}
+            #d32 { width:50px; height:50px;
+                    background: red; position:absolute;
+                    top:20px; left:30px;}
+            #d33 { width:50px; height:50px;
+                    background: yellow; position:absolute;
+                    top:20px; right:30px;}
+        </style>
+    </head>
+    <body>
+        <div id="d31">
+            <div id="d32"> absolute </div><br>
+        </div>
+        <div id="d33"> absolute2 </div><br>
+        <hr>
+    </body>
 
 
 
-<!--
-z-index
-높이값을 주어서 선언된 순서와 상관없이 높이 배치 되도록 설정
--->
-<head>
-    <style>
-        #d42 { width:50px; height:50px;
-            background: red; position: fixed;
-            top:50px; right:70px; z-index: 40;}
-        #d43 { width:50px; height:50px;
-            background: green; position: fixed;
-            top:50px; right:100px; z-index: 30;}
-        #d44 { width:50px; height:50px;
-            background: yellow; position: fixed;
-            top:50px; right:120px; z-index: 20;}
-    </style>
-</head>
-<body>
-    <div id="d42"></div>
-    <div id="d43"></div>
-    <div id="d44"></div>
-</body>
-<hr>
+    <h2>fixed : 고정 좌표 배치 방식</h2>
+    <!--
+    브라우저 가시영역 (document body)을 기준으로
+    배치되어 스크롤을 하더라도 언제나 그 위치에 고정배치 (쇼핑몰 장바구니)
+    -->
+    <head>
+        <style>
+            #d41 { width:50px; height:50px;
+                background: blue; position: fixed;
+                top:50px; right:50px; z-index: 50;}
+        </style>
+    </head>
+    <body>
+        <div id="d41">fixed</div>
+        <hr>
+    </body>
 
 
 
-<!--
-overflow
-대상요소의 영역을 벗어나는 요소에 대한 처리
-필요에 따라 스크롤바를 표시하면
-
-스크롤바를 세세하게 설정할 필요가 있는경우
-overflow-x, overflow-y 를 사용해도 됨
--->
-<head>
-    <style>
-        #p51 { width:300px; height:50px;
-            overflow : auto;
-            border: 1px solid red;}
-        #p52 { width:200px; height:50px;
-            overflow-x : scroll; overflow-y: hidden;
-            border: 1px solid red;}
-        #p53 { width:300px; height:300px;
-            overflow : scroll; border: 1px solid red;}
-    </style>
-</head>
-<body>
-    <div id="p51">
-        시간은 금이라구, 친구!!
-        시간은 금이라구, 친구!!
-        시간은 금이라구, 친구!!
-        시간은 금이라구, 친구!!
-    </div><br>
-
-    <div id="p52">
-        시간은 금이라구, 친구!!
-        시간은 금이라구, 친구!!
-        시간은 금이라구, 친구!!
-        시간은 금이라구, 친구!!
-    </div><br>
-
-    <div id="p53">
-        <img src="../image/free-icon-llama-3930415.png">
-    </div>
-</body>
-<hr>
+    <h2>z-index</h2>
+    <!-- 높이값을 주어서 선언된 순서와 상관없이 높이 배치 되도록 설정 -->
+    <head>
+        <style>
+            #d42 { width:50px; height:50px;
+                background: red; position: fixed;
+                top:50px; right:70px; z-index: 40;}
+            #d43 { width:50px; height:50px;
+                background: green; position: fixed;
+                top:50px; right:100px; z-index: 30;}
+            #d44 { width:50px; height:50px;
+                background: yellow; position: fixed;
+                top:50px; right:120px; z-index: 20;}
+        </style>
+    </head>
+    <body>
+        <div id="d42"></div>
+        <div id="d43"></div>
+        <div id="d44"></div>
+        <hr>
+    </body>
 
 
 
+    <h2>overflow</h2>
+    <!--
+    대상요소의 영역을 벗어나는 요소에 대한 처리
+    필요에 따라 스크롤바를 표시하면
+
+    스크롤바를 세세하게 설정할 필요가 있는경우
+    overflow-x, overflow-y 를 사용해도 됨
+    -->
+    <head>
+        <style>
+            #p51 { width:300px; height:50px;
+                overflow : auto;
+                border: 1px solid red;}
+            #p52 { width:200px; height:50px;
+                overflow-x : scroll; overflow-y: hidden;
+                border: 1px solid red;}
+            #p53 { width:300px; height:300px;
+                overflow : scroll; border: 1px solid red;}
+        </style>
+    </head>
+    <body>
+        <div id="p51">
+            시간은 금이라구, 친구!!
+            시간은 금이라구, 친구!!
+            시간은 금이라구, 친구!!
+            시간은 금이라구, 친구!!
+        </div><br>
+
+        <div id="p52">
+            시간은 금이라구, 친구!!
+            시간은 금이라구, 친구!!
+            시간은 금이라구, 친구!!
+            시간은 금이라구, 친구!!
+        </div><br>
+
+        <div id="p53">
+            <img src="../image/free-icon-llama-3930415.png">
+        </div>
+        <hr>
+    </body>
 </html>

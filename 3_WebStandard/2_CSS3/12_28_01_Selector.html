@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>CSS Selector</title>
 </head>
+
+    <h1>CSS Selector</h1>
     <!--
     CSS (Cascade Style Sheets)
     Html 요소들이 각종 미디어 (pc, 태블릿, 핸드폰)에서 어떻게 보일것인지를 정의
@@ -12,8 +14,8 @@
         작성하는 서식을 의미
     -->
 
+    <h2>CSS reset</h2>
     <!--
-    CSS reset
     각 브라우져마다 기본적으로 설정되어 있는 스타일이 제각각
     이러한 점을 개선하기 위해 CSS 를 정의하기 전에
     브라우저 기본 스타일(여백, 간격)을 모두 초기화하는 것이 좋음
@@ -23,12 +25,14 @@
     HTML Doctor CSS Reset
     Yahoo! Reset CSS
     -->
-<head>
-    <Link rel="stylesheet" href="normalize.css">
-</head>
-    <!-- meyer - <Link rel="stylesheet" href="reset.css"> -->
+    <head>
+        <Link rel="stylesheet" href="normalize.css">
+        <!-- meyer - <Link rel="stylesheet" href="reset.css"> -->
+    </head>
+    <hr>
 
 
+    <h2>CSS 요소 선택자</h2>
     <!--
     선택자 selector
     CSS 를 적용할 요소를 가르키는 방법을 규정
@@ -36,110 +40,113 @@
 
     요소 선택자 : 지정한 태그에 대해 일괄적으로 스타일 적용
     -->
-<head>
-    <style>
-        h2 {color: red;}
-        h4 {color: orange;}
-        p {background: green;}
-        div {background: yellow;}
-    </style>
-</head>
-<body>
+    <head>
+        <style>
+            h3 {color: red;}
+            h4 {color: orange;}
+            p {background: green;}
+            div {background: yellow;}
+        </style>
+    </head>
+    <body>
+        <h3>CSS Tools: Reset CSS</h3>
+        <h4>The reset styles given here are intentionally very generic.</h4>
+        <p>
+            The goal of a reset stylesheet is to reduce browser inconsistencies in things
+            like default line heights, margins and font sizes of headings, and so on.
+        </p>
+        <hr>
+    </body>
 
-<h1>CSS 요소 선택자</h1>
-<h2>CSS Tools: Reset CSS</h2>
-<h4>The reset styles given here are intentionally very generic.</h4>
-<p>
-    The goal of a reset stylesheet is to reduce browser inconsistencies in things
-    like default line heights, margins and font sizes of headings, and so on.
-</p>
-<hr>
-<!--
+
+    <h2>CSS Id 선택자</h2>
+    <!--
     아이디 선택자 : 특정태그에 대해서만 스타일 적용
                   태그에 id 속성을 이용해서 이름을 선언하고
                   스타일 적용시 선택자 이름을 #으로 시작함
--->
-<head>
-    <style>
-        #strong {color:white;}
-    </style>
-</head>
+    -->
+    <head>
+        <style>
+            #strong {color:white;}
+        </style>
+    </head>
+    <body>
+        <h3>CSS Tools: Reset CSS</h3>
+        <h4>The reset styles given here are intentionally very generic.</h4>
+        <p id="strong">
+            The goal of a reset stylesheet is to reduce browser inconsistencies in things
+            like default line heights, margins and font sizes of headings, and so on.
+        </p>
+        <hr>
+    </body>
 
-<h1>CSS Id 선택자</h1>
-<h2>CSS Tools: Reset CSS</h2>
-<h4>The reset styles given here are intentionally very generic.</h4>
-<p id="strong">
-    The goal of a reset stylesheet is to reduce browser inconsistencies in things
-    like default line heights, margins and font sizes of headings, and so on.
-</p>
-<hr>
-<!--
+
+    <h2 class="em">CSS 클래스 선택자</h2>
+    <!--
     클래스 선택자 : 서로 다른 여러태그들을 대상으로 일괄적으로 스타일 적용
                   태그에 class 속성을 이용해서 이름을 선언하고
                   스타일 적용시 선택자 이름을 .으로 시작함
--->
-<head>
-    <style>
-        .em { font-family: 궁서체;}
-    </style>
-</head>
+    -->
+    <head>
+        <style>
+            .em { font-family: 궁서체;}
+        </style>
+    </head>
+    <body>
+        <h3 class="em">CSS Tools: Reset CSS</h3>
+        <h4>The reset styles given here are intentionally very generic.</h4>
+        <p>
+            The goal of a reset stylesheet is to reduce browser inconsistencies in things
+            like default line heights, margins and font sizes of headings, and so on.
+        </p>
+        <hr>
+    </body>
 
-<h1 class="em">CSS Id 선택자</h1>
-<h2 class="em">CSS Tools: Reset CSS</h2>
-<h4>The reset styles given here are intentionally very generic.</h4>
-<p>
-    The goal of a reset stylesheet is to reduce browser inconsistencies in things
-    like default line heights, margins and font sizes of headings, and so on.
-</p>
-<hr>
-<!--
+
+    <h2>CSS 그룹 선택자</h2>
+    <!--
     그룹 선택자 : 서로 다른 여러태그들을 대상으로 일괄적으로 스타일 적용
                 각 요소들을 ,를 이용해서 스타일을 적용할 대상을 선택
                 경우에 따라 클래스 선택자보다 편리하게 사용할 수 있음
--->
-<head>
-    <style>
-        h4, p { font-family: "italic"}
-    </style>
-</head>
+    -->
+    <head>
+        <style>
+            h4, p { font-family: "italic"}
+        </style>
+    </head>
+    <body>
+        <h2>CSS Tools: Reset CSS</h2>
+        <h4>The reset styles given here are intentionally very generic.</h4>
+        <p>
+            The goal of a reset stylesheet is to reduce browser inconsistencies in things
+            like default line heights, margins and font sizes of headings, and so on.
+        </p>
+        <hr>
+    </body>
 
-<h1>CSS Id 선택자</h1>
-<h2>CSS Tools: Reset CSS</h2>
-<h4>The reset styles given here are intentionally very generic.</h4>
-<p>
-    The goal of a reset stylesheet is to reduce browser inconsistencies in things
-    like default line heights, margins and font sizes of headings, and so on.
-</p>
-<hr>
-<!--
+
+    <h2>자손 선택자</h2>
+    <!--
     자손 선택자 : 특정 요소의 하위요소들을 대상으로 일괄적으로 스타일 적용
                 상위요소와 하위 요소들을 공백으로 구분지어 선언
                 상위요소는 요소/아이디/클래스 선탟자 중 하나가 될 수 있음
--->
-<head>
-    <style>
-        div p { background: mintcream; }
-        div ul { background: aqua;}
-        div ul li { background: grey}
-    </style>
-</head>
-
-<div>
-    <p>내가 좋아하는 분식</p>
-    <ul>
-        <li>떡볶이</li>
-        <li>튀김</li>
-        <li>순대</li>
-    </ul>
-</div>
-<hr>
-
-
-
-
-
-
-
-
-</body>
+    -->
+    <head>
+        <style>
+            div p { background: mintcream; }
+            div ul { background: aqua;}
+            div ul li { background: grey}
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>내가 좋아하는 분식</p>
+            <ul>
+                <li>떡볶이</li>
+                <li>튀김</li>
+                <li>순대</li>
+            </ul>
+        </div>
+        <hr>
+    </body>
 </html>

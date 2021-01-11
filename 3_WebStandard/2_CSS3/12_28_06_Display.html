@@ -5,103 +5,100 @@
     <title>Display</title>
 </head>
 
+    <h2>Display</h2>
+    <!--
+    display 속성은 레이아웃 정의에 자주 사용되는 중요한 속성임
+
+    block : 대상요소를 block 처럼 보이게 함
+            요소의 너비가 내용에 상관없이 100% 이므로
+            항상 새로운 라인에 배치
+            크기, 여백, 마진을 지정할 수 있음
+            div, h, p, ol/ul/li, hr, table, form
+
+    inline : 대상요소를 inline 처럼 보이게 함
+             요소의 너비는 컨텐츠의 크기에 따라 결정
+             따라서, 새로운 라인에 배치되지 않고 남은 공간에 배치
+             크기 지정 불가능
+             마진 좌우만 가능
+             여백 지정 가능
+             span, a, img, input, select, textarea, button
+
+    inline-block : 대상요소를 inline 과 block 처럼 보이게 함
+                   새로운 라인에 배치되지 않지만, 크기, 여백, 마진 지정 가능
+    -->
+    <head>
+        <style>
+            div:nth-child(1) { padding : 20px; background: yellowgreen; }
+            div:nth-child(2) { padding : 20px; background: yellow;
+                               width : 300px;}
+            span { background:limegreen;
+                   width:100px; height:100px; /* 크기 지정 불가 */
+                   padding:10px; margin:20px; /* 상하 여백 지정 불가 */}
+
+            #span11 { background:limegreen;
+                     width:100px; height:100px;
+                     padding:10px; margin:20px;
+                     display:inline-block;}
+        </style>
+    </head>
+    <body>
+        <div id="div11">
+            <p>블록레벨 요소1</p>
+        </div>
+        <div id="div12">
+            <p>블록레벨 요소2</p>
+        </div>
+        <div id="div13">
+            <p>블록레벨 요소3</p>
+        </div>
+        <div id="div14">
+            <p>시간은 <span>금이라구</span>, 친구!</p>
+            <span>더조은 컴퓨터</span>
+            <span id="span11">Hello, World!!</span>
+            <span></span>
+            <span></span>
+        </div>
+        <hr>
+    </body>
 
 
-<!--
-display
-display 속성은 레이아웃 정의에 자주 사용되는 중요한 속성임
+    <h2>가시성</h2>
+    <!--
+    visibility 속성은 대상요소를 보이게 할 것인지 말것인지를 정의
+    visible : 요소를 보이게 함
+    hidden : 요소를 보이지 않게 함 (차지했던 영역은 남아있음)
 
-block : 대상요소를 block 처럼 보이게 함
-        요소의 너비가 내용에 상관없이 100% 이므로
-        항상 새로운 라인에 배치
-        크기, 여백, 마진을 지정할 수 있음
-        div, h, p, ol/ul/li, hr, table, form
+    display 대상요소를 보이지 않게 할때 display:none 사용하기도 하지만 적용방식이 다름
+    none : 요소를 보이지 않게 함 (차지했던 영역도 없어짐)
 
-inline : 대상요소를 inline 처럼 보이게 함
-         요소의 너비는 컨텐츠의 크기에 따라 결정
-         따라서, 새로운 라인에 배치되지 않고 남은 공간에 배치
-         크기 지정 불가능
-         마진 좌우만 가능
-         여백 지정 가능
-         span, a, img, input, select, textarea, button
-
-inline-block : 대상요소를 inline 과 block 처럼 보이게 함
-               새로운 라인에 배치되지 않지만, 크기, 여백, 마진 지정 가능
--->
-<head>
-    <style>
-        div:nth-child(1) { padding : 20px; background: yellowgreen; }
-        div:nth-child(2) { padding : 20px; background: yellow;
-                           width : 300px;}
-        span { background:limegreen;
-               width:100px; height:100px; /* 크기 지정 불가 */
-               padding:10px; margin:20px; /* 상하 여백 지정 불가 */}
-
-        #span1 { background:limegreen;
-                 width:100px; height:100px;
-                 padding:10px; margin:20px;
-                 display:inline-block;}
-    </style>
-</head>
-<body>
-    <div id="div11">
-        <p>블록레벨 요소1</p>
-    </div>
-    <div id="div12">
-        <p>블록레벨 요소2</p>
-    </div>
-    <div id="div13">
-        <p>블록레벨 요소3</p>
-    </div>
-    <div id="div14">
-        <p>시간은 <span>금이라구</span>, 친구!</p>
-        <span>더조은 컴퓨터</span>
-        <span id="span11">Hello, World!!</span>
-        <span></span>
-        <span></span>
-    </div>
-</body>
-<hr>
-
-
-
-<!--
-가시성
-visibility 속성은 대상요소를 보이게 할 것인지 말것인지를 정의
-visible : 요소를 보이게 함
-hidden : 요소를 보이지 않게 함 (차지했던 영역은 남아있음)
-
-display 대상요소를 보이지 않게 할때 display:none 사용하기도 하지만 적용방식이 다름
-none : 요소를 보이지 않게 함 (차지했던 영역도 없어짐)
-
-opacity 속성은 대상의 투명도를 조절할 수 있음
-투명도 값은 0(투명) ~ 1(불투명)사이임
--->
-<head>
-    <style>
-        #div21 { width:200px; height:200px;
-                 background:orange; visibility: hidden; }
-        #div22 { width:200px; height:200px;
-                 background:orange; display:none; }
-        #div24 { width:200px; height:200px;
-                 background:beige; opacity:0.4; }
-    </style>
-</head>
-<body>
-    <div id="div21">
-        <p>블록레벨 요소1</p>
-    </div>
-    <div id="div22">
-        <p>블록레벨 요소2</p>
-    </div>
-    <div id="div23">
-        <p>블록레벨 요소3</p>
-    </div>
-    <div id="div24">
-        <p>블록레벨 요소4</p>
-    </div>
-</body>
-<hr>
+    opacity 속성은 대상의 투명도를 조절할 수 있음
+    투명도 값은 0(투명) ~ 1(불투명)사이임
+    -->
+    <head>
+        <style>
+            #div21 { width:200px; height:200px;
+                     background:orange; visibility: hidden; }
+            #div22 { width:200px; height:200px;
+                     background:orange; display:none; }
+            #div24 { width:200px; height:200px;
+                     background:beige; opacity:0.4; }
+        </style>
+    </head>
+    <body>
+        <div id="div21">
+            <p>블록레벨 요소1</p>
+        </div>
+        <div id="div22">
+            <p>블록레벨 요소2</p>
+        </div>
+        <div id="div23">
+            <p>블록레벨 요소3</p>
+        </div>
+        <div id="div24">
+            <p>블록레벨 요소4</p>
+        </div>
+        <hr>
+    </body>
 
 
 </html>
