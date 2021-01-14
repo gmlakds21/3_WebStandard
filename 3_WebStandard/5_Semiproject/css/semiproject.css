@@ -9,6 +9,13 @@
 
 .bidragup { position: relative; top: -3px; }
 .tblines { border-top: 3px solid black; border-bottom: 3px solid black; }
+.tblines2 { border-bottom: 3px solid black; }
+
+.cmtbg1 { background: yellow; padding: 5px 0;}
+.cmtbg2 { background: lime; padding: 5px 0;}
+
 
 .tt th:nth-child(2) {text-align:left}
 .tt td:nth-child(2) {text-align:left}
+
+.tt2 td:first-child {width : 15%}
